@@ -151,17 +151,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">37</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">42</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">43</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -321,7 +321,7 @@
 <p>（tf-pose-estimation）Tensorflow 1.4.1+</p>
 <p>所以我选择了1.13.2，刚好可以和我的cuda10配套使用。</p>
 <p>对于requirements.txt我做了如下修改：</p>
-<p><img src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p>
+<p><img data-src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p>
 <h3 id="2-编译用于后期处理的C-库"><a href="#2-编译用于后期处理的C-库" class="headerlink" title="2.编译用于后期处理的C++库"></a>2.编译用于后期处理的C++库</h3><p>（1）先下载swig，然后用swig命令去编译<br><a href="http://www.swig.org/download.html" target="_blank" rel="noopener">下载地址</a>    <strong>注意：选择swigwin，因为是windows系统下安装，不要下错了。</strong><br>解压到任意目录，我这里放在C:\swigwin-4.0.1，把该目录加入环境变量path，右键“此电脑”-属性-高级系统设置-环境变量-系统变量-path，例如我是F:\swigwin-4.0.1，添加进path即可。添加完成后打开cmd，输入<code>swig --help</code>查看是否成功。<br>（2）cd tf-pose-estimation/tf_pose/pafprocess/<br>运行：swig -python -c++ pafprocess.i &amp;&amp; python3 setup.py build_ext –inplace</p>
 <h3 id="3-模型"><a href="#3-模型" class="headerlink" title="3.模型"></a>3.模型</h3><p>该项目提供的文件有四个：</p>
 <ul>
@@ -507,20 +507,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

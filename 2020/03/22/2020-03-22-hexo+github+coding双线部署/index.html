@@ -153,17 +153,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">37</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">42</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">43</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -312,17 +312,17 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>也许有人会问，为啥一个博客要部署那么多，部署一个不就得了，yes，我起初就是这么想的，可是到后来我发现我部署在github的网站打不开了，应该是被墙了，所以只好也在国内代码托管平台部署一个了，我这里以coding为例，此文是建立在已经部署完GitHub的前提下，增加Coding部署的方法。<a id="more"></a></p>
 <h2 id="Coding注册"><a href="#Coding注册" class="headerlink" title="Coding注册"></a>Coding注册</h2><p>​    打开<a href="https://coding.net/" target="_blank" rel="noopener" title="官网">Coding官网</a>，注册，然后创建一个代码托管项目，填下项目名称创建即可，接着要注意的地方是在新版的coding当中,“静态page”要自己手动开启“功能开关“中的“构建与部属”（<strong>2020.4.22更新为“持续部署”</strong>），我找这个就找了半天，然后点开项目发现在网页的左下角的“项目设置”，天呐，真是太不人性化了，谁没事往那边瞅啊，太容易被浏览器的状态信息给遮挡了，点开之后照我上面说的打开“构建与部属”，之后你就会在左侧菜单栏的“构建与部属”中找到“静态网站”了，创建之前会提示你进行实名认证。新版的coding会随机给你生成一个域名，所以不要自己设置，不喜欢的话尽快申请一个自己的域名吧。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200326213523893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200326213523893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
 <h2 id="添加公匙"><a href="#添加公匙" class="headerlink" title="添加公匙"></a>添加公匙</h2><p>进入该项目的“代码仓库“，进入“仓库设置”，点击“部署公匙”，新建之后，粘贴C:\Users\MACHENIKE\.ssh目录下“id_rsa.pub”文件里的公匙，勾选“永久有效”，这里要注意的是一定要勾选“授予推送权限”，否则属性为只读，就不能部署了，密匙和之前在GitHub上要一致，这样才能一起部署。</p>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打开网站配置文件_config.yml，找到“deploy”下的“repo”，修改成：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html">repo: <br>  github: git@github.com:xxx/xxx.github.io.git<br>  coding: git@e.coding.net:fjct/blog.git<br></code></pre></td></tr></table></figure>
 
-<p>其中，xxx为你的github用户名，coding的SSH在你的“项目概览”右下角，复制粘贴即可，最后保存。注意，当部署报错时，把密匙同目录下的“known_hosts”给删了，然后在部署时出现“Are you sure you want to continue connecting (yes/no/[fingerprint])?”中输入“yes”即可。<br><img src="https://img-blog.csdnimg.cn/20200326213636257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="2"></p>
+<p>其中，xxx为你的github用户名，coding的SSH在你的“项目概览”右下角，复制粘贴即可，最后保存。注意，当部署报错时，把密匙同目录下的“known_hosts”给删了，然后在部署时出现“Are you sure you want to continue connecting (yes/no/[fingerprint])?”中输入“yes”即可。<br><img data-src="https://img-blog.csdnimg.cn/20200326213636257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="2"></p>
 <p>然后在你的blog文件目录下，右键打开git bush here，输入：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">hexo d -g<br></code></pre></td></tr></table></figure>
 
 <p>等待部署完成即可。</p>
-<h2 id="双线解析"><a href="#双线解析" class="headerlink" title="双线解析"></a>双线解析</h2><p>这里照着我图片里的设置对域名进行解析就好了，解析好之后记得在“静态网页”设置里绑定。<br><img src="https://img-blog.csdnimg.cn/20200326213427183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="3"></p>
+<h2 id="双线解析"><a href="#双线解析" class="headerlink" title="双线解析"></a>双线解析</h2><p>这里照着我图片里的设置对域名进行解析就好了，解析好之后记得在“静态网页”设置里绑定。<br><img data-src="https://img-blog.csdnimg.cn/20200326213427183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="3"></p>
 <p>绑定域名很简单，我就不说了。</p>
 
     </div>
@@ -390,12 +390,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/03/22/2020-03-22-Tensorflow2%E4%B8%8ECUDA%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/" rel="prev" title="Tensorflow2与CUDA版本问题">
-      <i class="fa fa-chevron-left"></i> Tensorflow2与CUDA版本问题
+    <a href="/2020/03/22/2020-03-22-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%87%BA%E7%8E%B0%E5%8D%A1Ubuntu%20Logo%E7%95%8C%E9%9D%A2/" rel="prev" title="安装过程中出现卡Ubuntu Logo界面">
+      <i class="fa fa-chevron-left"></i> 安装过程中出现卡Ubuntu Logo界面
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/03/23/2020-03-23-%E8%8A%B1%E4%BA%86%E4%B8%A4%E5%A4%A9%E6%97%B6%E9%97%B4%E4%BD%93%E9%AA%8C%E4%BA%86%E4%B8%80%E4%B8%8Bhexo/" rel="next" title="花了两天时间体验了一下Hexo">
-      花了两天时间体验了一下Hexo <i class="fa fa-chevron-right"></i>
+    <a href="/2020/03/22/2020-03-22-Tensorflow2%E4%B8%8ECUDA%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/" rel="next" title="Tensorflow2与CUDA版本问题">
+      Tensorflow2与CUDA版本问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -472,20 +472,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

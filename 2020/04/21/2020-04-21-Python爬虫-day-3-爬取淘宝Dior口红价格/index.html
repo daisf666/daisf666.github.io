@@ -151,17 +151,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">37</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">42</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">43</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -313,7 +313,7 @@
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/21 21:30</span><br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHTMLText</span><span class="hljs-params">(url)</span>:</span><br>	<span class="hljs-keyword">try</span>:<br>		headers = &#123;<br>			<span class="hljs-string">"user-agent"</span>: <span class="hljs-string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"</span>,<br>			<span class="hljs-string">"cookie"</span>: <span class="hljs-string">"自己登录淘宝查询商品完成后的cookie"</span><br>		&#125;<br>		r = requests.get(url, timeout=<span class="hljs-number">30</span>, headers=headers)<br>		r.raise_for_status()<br>		r.encoding = r.apparent_encoding<br>		<span class="hljs-keyword">return</span> r.text<br>	<span class="hljs-keyword">except</span>:<br>		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parsePage</span><span class="hljs-params">(ilt, html)</span>:</span><br>	<span class="hljs-keyword">try</span>:<br>		plt = re.findall(<span class="hljs-string">r'\"view_price\"\:\"[\d\.]*\"'</span>, html)<br>		tlt = re.findall(<span class="hljs-string">r'\"raw_title\"\:\".*?\"'</span>, html)<br>		<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(plt)):<br>			price = eval(plt[i].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">1</span>])<br>			title = eval(tlt[i].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">1</span>])<br>			ilt.append([price, title])<br>	<span class="hljs-keyword">except</span>:<br>		print(<span class="hljs-string">""</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printGoodsList</span><span class="hljs-params">(ilt)</span>:</span><br>	tplt = <span class="hljs-string">"&#123;0:^4&#125;\t&#123;1:&lt;8&#125;\t&#123;2:&#123;3&#125;&lt;16&#125;"</span><br>	print(tplt.format(<span class="hljs-string">"序号"</span>, <span class="hljs-string">"价格"</span>, <span class="hljs-string">"商品名称"</span>, chr(<span class="hljs-number">12288</span>)))<br>	count = <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> g <span class="hljs-keyword">in</span> ilt:<br>		count = count + <span class="hljs-number">1</span><br>		print(tplt.format(count, g[<span class="hljs-number">0</span>], g[<span class="hljs-number">1</span>], chr(<span class="hljs-number">12288</span>)))<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>	goods = <span class="hljs-string">'Dior口红'</span><br>	depth = <span class="hljs-number">2</span><br>	start_url = <span class="hljs-string">'https://s.taobao.com/search?q='</span> + goods<br>	infoList = []<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(depth):<br>		<span class="hljs-keyword">try</span>:<br>			url = start_url + <span class="hljs-string">'&amp;s='</span> + str(<span class="hljs-number">44</span> * i)<br>			html = getHTMLText(url)<br>			parsePage(infoList, html)<br>		<span class="hljs-keyword">except</span>:<br>			<span class="hljs-keyword">continue</span><br>	printGoodsList(infoList)<br></code></pre></td></tr></table></figure>
 
 <p><strong>注意：</strong>cookie的获取方式——查询结果网页中F12，点击Network，找到Name为search?q=DiorXXXXXX请求，在Headers下可以找到cookie和user-agent，不确定是否找对了没有可以看到General的Request URL是否和你现在浏览器的地址一致，翻到最下面也可以看到你查询的关键字信息。我用的是Pycharm，写代码的时候犯了一个致命错误，就是没有把右上角的运行程序改为当前的程序，对着错误代码的错误结果，改了一晚上正确代码，我真是醉了，好像是第二次了。以后只用快捷键运行程序了，怒。运行当前程序的快捷键是<strong>Ctrl+Shift+F10</strong>。</p>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200421002929.png" alt="淘宝爬取Dior口红价格"></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img data-src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200421002929.png" alt="淘宝爬取Dior口红价格"></p>
 
     </div>
 
@@ -462,20 +462,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-count">37</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
