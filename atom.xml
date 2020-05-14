@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Daisf&#39;s blog</title>
+  
+  <subtitle>不要因懒惰失去遇见美好的机会</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-05-14T15:04:59.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Daisf</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo+DaoVoice实现网页在线通讯功能</title>
+    <link href="http://yoursite.com/2020/04/23/2020-04-23-Hexo+DaoVoice%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E5%9C%A8%E7%BA%BF%E9%80%9A%E8%AE%AF%E5%8A%9F%E8%83%BD/"/>
+    <id>http://yoursite.com/2020/04/23/2020-04-23-Hexo+DaoVoice%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E5%9C%A8%E7%BA%BF%E9%80%9A%E8%AE%AF%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-04-23T10:20:20.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><p><a href="http://dashboard.daovoice.io/app/339ec5d6" target="_blank" rel="noopener">DaoVoice官网</a></p><ol><li><p>先注册，注册之后，在左侧菜单栏点击<strong>应用设置</strong>，在这里你可以定制你的聊天框，然后点击<strong>安装到网站</strong>，往下翻，找到你的<strong>app_id</strong>。<img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423181651158.png" alt=""></p></li><li><p>在next主题的配置文件中（\themes\next_config.yml），新增如下内容：</p></li></ol><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Online contact</span><br><span class="hljs-attr">daovoice:</span> <span class="hljs-literal">true</span><br><span class="hljs-attr">daovoice_app_id:</span> <span class="hljs-string">这里替换成你DaoVoice上的appid</span><br></code></pre></td></tr></table></figure><p>再到\themes\next\layout_partials\head.swig文件的最后，新增如下内容：</p><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs django"><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">if</span></span> theme.daovoice %&#125;</span><br><span class="xml">  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><br><span class="xml">  (function(i,s,o,g,r,a,m)&#123;i["DaoVoiceObject"]=r;i[r]=i[r]||function()&#123;(i[r].q=i[r].q||[]).push(arguments)&#125;,i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)&#125;)(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")</span><br><span class="xml">  daovoice('init', &#123;</span><br><span class="xml">      app_id: "</span><span class="hljs-template-variable">&#123;&#123;theme.daovoice_app_id&#125;&#125;</span><span class="xml">"</span><br><span class="xml">    &#125;);</span><br><span class="xml">  daovoice('update');</span><br><span class="xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="hljs-template-tag">&#123;% <span class="hljs-name"><span class="hljs-name">endif</span></span> %&#125;</span><br></code></pre></td></tr></table></figure><ol start="3"><li>重新部署</li></ol><p>现在就可以在网站上看到你的聊天框了，是不是很简单呢，部署前你也可以先在本地测试一下。</p><p><strong>注意：</strong>如果出现一些显示不正常，多半是冲突了，我是因为开启了pjax的缘故，就导致每次打开新的页面会出现空白内容，只剩一个侧边栏，必须刷新一下才能显示正常，把pjax关了就好了。</p>]]></content>
+    
+    <summary type="html">
+    
+      如果你发了一篇文章，读者看了，觉得有不懂的地方，想要联系到你。评论留言可能反馈太慢，发邮件联系你又麻烦。Next自带的我试了下Tidio,逼格太高，不适合我朴素的小站，还是国外的产品，很多地方改成我们习惯的方式挺麻烦的。现在DaoVoice就可以解决这个痛点，及时在线通讯，直接联系到作者。DaoVoice还打通了微信端，在网页上发送的消息，会直接推送到作者的微信上，另有小程序支持消息回复等，非常方便。
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="daovoice" scheme="http://yoursite.com/tags/daovoice/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PicGo+Gitee</title>
+    <link href="http://yoursite.com/2020/04/23/2020-04-23-PicGo+Gitee/"/>
+    <id>http://yoursite.com/2020/04/23/2020-04-23-PicGo+Gitee/</id>
+    <published>2020-04-22T16:26:41.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>Gitee也有许多自身的缺点，比如容量的限制和禁止大量外链的声明。。。万一哪天被删库了就gg了。</p><p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423002641422.png" alt=""></p><h3 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1. 安装插件"></a>1. 安装插件</h3><p>怎么安装插件我上一篇文章说了，这里要注意的是要安装<strong>gitee-uploader 1.1.2</strong>这个版本,不要安装左边那个带beta的,如果是离线安装,则要选择对应的<strong>picgo-plugin-gitee-uploader</strong> clone,因为我测试<strong>picgo-plugin-gitee</strong>不成功。</p><h3 id="2-建立gitee（码云）图床库"><a href="#2-建立gitee（码云）图床库" class="headerlink" title="2. 建立gitee（码云）图床库"></a>2. 建立gitee（码云）图床库</h3><p>注册码云的方法很简单，不多说了，我们直接建立自己的图床库。<br>点击右上角的+号，新建仓库<br>新建仓库的要点如下：</p><ol><li><h5 id="输入一个仓库名称"><a href="#输入一个仓库名称" class="headerlink" title="输入一个仓库名称"></a>输入一个仓库名称</h5></li><li><h5 id="其次将仓库设为公开"><a href="#其次将仓库设为公开" class="headerlink" title="其次将仓库设为公开"></a>其次将仓库设为公开</h5></li><li><h5 id="勾选使用Readme文件初始化这个仓库"><a href="#勾选使用Readme文件初始化这个仓库" class="headerlink" title="勾选使用Readme文件初始化这个仓库"></a>勾选使用Readme文件初始化这个仓库</h5></li></ol><p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423004646627.png" alt=""></p><p>点击创建进入下一步（我这里已经创建了blogimage,所以前面加了个d以作示范,下面仍是blogimage）。</p><h3 id="3-获取token"><a href="#3-获取token" class="headerlink" title="3. 获取token:"></a>3. 获取token:</h3><ol><li>点击头像，进入设置</li><li>找到左边安全设置里面的私人令牌</li><li>点击<strong>生成新令牌</strong>，把<strong>projects</strong>这一项勾上，其他的不用勾，然后提交</li><li>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，这串数字只出现一次，到配置之前要将这串数字保存好。</li></ol><h3 id="4-配置PicGo"><a href="#4-配置PicGo" class="headerlink" title="4. 配置PicGo"></a>4. 配置PicGo</h3><p>   安装了<strong>gitee-uploader 1.1.2</strong>插件之后，我们开始配置插件</p><p>   配置插件的要点如下：</p><p> <img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423005344922.png" alt=""></p><ul><li><p>repo：用户名/仓库名称，比如我自己的仓库daisf666/blogImage</p></li><li><p>branch：分支，这里写上master</p></li><li><p>token：填入码云的私人令牌</p></li><li><p>path：路径，一般写上img</p></li><li><p>customPath：提交消息，这一项和下一项customURL都不用填。在提交到码云后，会显示提交消息，插件默认提交的是 Upload 图片名 by picGo - 时间</p></li></ul><p>现在保存你刚才的配置，然后将它设置为默认图床，大功告成。</p><p><strong>随便选一张图片上传试试看，PicGo也支持剪贴板上传，配上win10的<em>Snipaste</em>截图神器，简直是利器！</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      PicGo配合Github不加速的话是会比Gitee慢的，而且还老是出毛病，动不动上传失败，毕竟服务器在海外，也在所难免，这里就介绍一下怎么配合Gitee部署,同理，Github配置也差不多，这里就不多说了。
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="图床" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PicGo不为人知的一些小技巧</title>
+    <link href="http://yoursite.com/2020/04/22/2020-04-22-PicGo%E4%B8%8D%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>http://yoursite.com/2020/04/22/2020-04-22-PicGo%E4%B8%8D%E4%B8%BA%E4%BA%BA%E7%9F%A5%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E6%8A%80%E5%B7%A7/</id>
+    <published>2020-04-22T12:16:54.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><ul><li><a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a></li><li><a href="https://www.typora.io/" target="_blank" rel="noopener">Typora</a></li></ul><h3 id="一、离线安装插件"><a href="#一、离线安装插件" class="headerlink" title="一、离线安装插件"></a>一、离线安装插件</h3><p>不知道是我自己的问题还是PicGo的问题，我始终都无法在gui完成在线安装，即使是在我重装了PicGo或者重启电脑之后，总是会弹出加载插件错误的提示。去Github看了一眼，在某些插件的介绍文档中，发现了离线安装的方式，我用的是windows，下面给出我的安装步骤：</p><ol><li><p>到<strong>C:\Users\MACHENIKE\AppData\Roaming\picgo</strong>目录下，右键“Git bush here”，clone GitHub上的插件项目到此目录。</p></li><li><pre><code class="bash">npm install ./插件名 或者 npm i picgo-plugin-gitee <span class="comment"># 比如安装支持Gitee的插件</span></code></pre></li></ol><p>到此就安装完成了，是不是很简单，重启PicGo之后就可以看到插件。</p><p>（后来发现可以直接把在线安装出现在桌面的包放到该目录下，重启也有效）</p><p>其他安装方式：</p><p><img src="https://i.loli.net/2020/04/22/sgRIzSdb7JNjeZy.png" alt=""></p><h3 id="二、开启Typora自动上传功能"><a href="#二、开启Typora自动上传功能" class="headerlink" title="二、开启Typora自动上传功能"></a>二、开启Typora自动上传功能</h3><p>怎么让图片上传更加便捷呢？现在让我们打开Typora的偏好设置，进行如下操作：</p><p><img src="https://i.loli.net/2020/04/22/mDHuoLQx3hf9Ili.png" alt=""></p><p>为了更直观地体现此功能，下面给出一张gif：</p><p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/typora-upload-image-gif-v2.gif" alt="typora-upload-image-gif-v2"></p><p>如果你未开启自动上传图片的功能，把图片拖入 Typora 或者粘贴到 Typora，右键图片将会看到一个上传图片的选项，在将图片复制到文章中的时候也会自动显示该选项。在文章目录下会有个<strong>upload</strong>文件夹储存图片到本地。<strong>注意如果图床存在同名文件上传是会失败的。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      PicGo可以支持多款插件，还可以配合Typora的自动上传功能，这两者加起来，简直是写作利器，这里顺便解决一下插件无法在线安装的问题。
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="图床" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python爬虫-Day 4 爬取天天基金网的基金净值</title>
+    <link href="http://yoursite.com/2020/04/22/2020-04-22-Python%E7%88%AC%E8%99%AB-day-4-%E7%88%AC%E5%8F%96%E5%A4%A9%E5%A4%A9%E5%9F%BA%E9%87%91%E7%BD%91%E7%9A%84%E5%9F%BA%E9%87%91%E5%87%80%E5%80%BC/"/>
+    <id>http://yoursite.com/2020/04/22/2020-04-22-Python%E7%88%AC%E8%99%AB-day-4-%E7%88%AC%E5%8F%96%E5%A4%A9%E5%A4%A9%E5%9F%BA%E9%87%91%E7%BD%91%E7%9A%84%E5%9F%BA%E9%87%91%E5%87%80%E5%80%BC/</id>
+    <published>2020-04-22T10:24:15.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>选取网站进行爬取时，应尽量选择基金信息静态存在于HTML页面中而非js代码生成的网站，还要注意Robots协议的限制。当进行模拟人的信息搜集且不会对网站造成性能损坏和经济损失的时候，我们可以适当忽略robots协议。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/22 15:00</span><br><br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> traceback<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHTMLText</span><span class="hljs-params">(url)</span>:</span><br><span class="hljs-keyword">try</span>:<br>headers = &#123;<br><span class="hljs-string">"user-agent"</span>: <span class="hljs-string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) "</span><br>  <span class="hljs-string">"Chrome/80.0.3987.163 Safari/537.36"</span>&#125;<br>r = requests.get(url, timeout=<span class="hljs-number">30</span>, headers=headers)<br>r.raise_for_status()<br>r.encoding = r.apparent_encoding<br><span class="hljs-keyword">return</span> r.text<br><span class="hljs-keyword">except</span>:<br><span class="hljs-keyword">return</span> <span class="hljs-string">""</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFundList</span><span class="hljs-params">(lst, fundURL)</span>:</span><br>html = getHTMLText(fundURL)<br>soup = BeautifulSoup(html, <span class="hljs-string">'html.parser'</span>)<br>a = soup.find_all(<span class="hljs-string">'tr'</span>)<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> a:<br><span class="hljs-keyword">try</span>:<br>id = i.attrs[<span class="hljs-string">'id'</span>]<br><span class="hljs-comment"># re.findall返回的是list，这里我们要把它转换为str，这里list里面就只有一个str的元素，这么做（指[0]）是为了下面url的赋值。</span><br>lst.append(re.findall(<span class="hljs-string">r'tr\d&#123;6&#125;'</span>, id)[<span class="hljs-number">0</span>])<br><span class="hljs-keyword">except</span>:<br><span class="hljs-keyword">continue</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFundIofo</span><span class="hljs-params">(lst, fundURL, fpath)</span>:</span><br><span class="hljs-comment"># 打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</span><br><span class="hljs-keyword">with</span> open(fpath, <span class="hljs-string">'w'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> f:<br>f.write(<span class="hljs-string">"基金信息"</span> + <span class="hljs-string">'\n'</span>)<br><span class="hljs-keyword">for</span> fund <span class="hljs-keyword">in</span> lst:<br>url = fundURL + fund[<span class="hljs-number">2</span>:] + <span class="hljs-string">'.html'</span>  <span class="hljs-comment"># 因为lst储存的是trxxxxxx，这里我们只需要xxxxxx，故从第3位也就是0、1、2的2开始到结束。</span><br>html = getHTMLText(url)<br><span class="hljs-keyword">try</span>:<br><span class="hljs-keyword">if</span> html == <span class="hljs-string">''</span>:<br><span class="hljs-keyword">continue</span><br>infoDict = &#123;&#125;<br>soup = BeautifulSoup(html, <span class="hljs-string">"html.parser"</span>)<br>foundInfo = soup.find(<span class="hljs-string">'div'</span>, attrs=&#123;<span class="hljs-string">'class'</span>:<span class="hljs-string">"merchandiseDetail"</span>&#125;)<br>name = foundInfo.find(attrs=&#123;<span class="hljs-string">'class'</span>: <span class="hljs-string">"fundDetail-tit"</span>&#125;)<br>infoDict.update(&#123;<span class="hljs-string">'基金名称'</span>: name.text.split()[<span class="hljs-number">0</span>]&#125;)<br>keyList = foundInfo.find_all(<span class="hljs-string">'dt'</span>)<br>valueList = foundInfo.find_all(<span class="hljs-string">'dd'</span>)<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(keyList)):<br>key = keyList[i].text.split(<span class="hljs-string">'净值估算每'</span>, <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>]<span class="hljs-comment"># 去掉多于备注："净值估算每个交易日XXXX请以基金管理人披露净值为准。"</span><br>val = valueList[<span class="hljs-number">3</span>*i].text<span class="hljs-comment"># 这里每个dt下有3个dd，我们只需要0，3，6去一一对应key的0，1，2</span><br>infoDict[key] = val<br><span class="hljs-comment"># 打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</span><br><span class="hljs-keyword">with</span> open(fpath, <span class="hljs-string">'a'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> f:<br>f.write(str(infoDict) + <span class="hljs-string">'\n'</span>)<br>f.close()<br><span class="hljs-keyword">except</span>:<br>traceback.print_exc()<br><span class="hljs-keyword">continue</span><br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>fund_list_url = <span class="hljs-string">"https://fund.eastmoney.com/fund.html#os_0;isall_0;ft_;pt_1"</span><br>fund_info_url = <span class="hljs-string">"https://fund.eastmoney.com/"</span><br>output_file = <span class="hljs-string">'D:/Fundinfo.txt'</span><br>slist = []<br>getFundList(slist, fund_list_url)<br>getFundIofo(slist, fund_info_url, output_file)<br></code></pre></td></tr></table></figure><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://i.loli.net/2020/04/22/kfTvj69AYCtNQg4.png" alt=""></p><p>感兴趣的话你也可以将其储存到excel中，会更加直观清楚。</p>]]></content>
+    
+    <summary type="html">
+    
+      爬取天天基金网的基金净值。
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python爬虫-Day 3 爬取淘宝Dior口红价格</title>
+    <link href="http://yoursite.com/2020/04/21/2020-04-21-Python%E7%88%AC%E8%99%AB-day-3-%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9DDior%E5%8F%A3%E7%BA%A2%E4%BB%B7%E6%A0%BC/"/>
+    <id>http://yoursite.com/2020/04/21/2020-04-21-Python%E7%88%AC%E8%99%AB-day-3-%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9DDior%E5%8F%A3%E7%BA%A2%E4%BB%B7%E6%A0%BC/</id>
+    <published>2020-04-20T16:30:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>爬取网站数据时请先查看该网站的robots.txt协议，禁止非法爬取！本次爬取仅作类人行为的爬虫练习，敬请谅解。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/21 21:30</span><br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHTMLText</span><span class="hljs-params">(url)</span>:</span><br><span class="hljs-keyword">try</span>:<br>headers = &#123;<br><span class="hljs-string">"user-agent"</span>: <span class="hljs-string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"</span>,<br><span class="hljs-string">"cookie"</span>: <span class="hljs-string">"自己登录淘宝查询商品完成后的cookie"</span><br>&#125;<br>r = requests.get(url, timeout=<span class="hljs-number">30</span>, headers=headers)<br>r.raise_for_status()<br>r.encoding = r.apparent_encoding<br><span class="hljs-keyword">return</span> r.text<br><span class="hljs-keyword">except</span>:<br><span class="hljs-keyword">return</span> <span class="hljs-string">""</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parsePage</span><span class="hljs-params">(ilt, html)</span>:</span><br><span class="hljs-keyword">try</span>:<br>plt = re.findall(<span class="hljs-string">r'\"view_price\"\:\"[\d\.]*\"'</span>, html)<br>tlt = re.findall(<span class="hljs-string">r'\"raw_title\"\:\".*?\"'</span>, html)<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(plt)):<br>price = eval(plt[i].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">1</span>])<br>title = eval(tlt[i].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">1</span>])<br>ilt.append([price, title])<br><span class="hljs-keyword">except</span>:<br>print(<span class="hljs-string">""</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printGoodsList</span><span class="hljs-params">(ilt)</span>:</span><br>tplt = <span class="hljs-string">"&#123;0:^4&#125;\t&#123;1:&lt;8&#125;\t&#123;2:&#123;3&#125;&lt;16&#125;"</span><br>print(tplt.format(<span class="hljs-string">"序号"</span>, <span class="hljs-string">"价格"</span>, <span class="hljs-string">"商品名称"</span>, chr(<span class="hljs-number">12288</span>)))<br>count = <span class="hljs-number">0</span><br><span class="hljs-keyword">for</span> g <span class="hljs-keyword">in</span> ilt:<br>count = count + <span class="hljs-number">1</span><br>print(tplt.format(count, g[<span class="hljs-number">0</span>], g[<span class="hljs-number">1</span>], chr(<span class="hljs-number">12288</span>)))<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>goods = <span class="hljs-string">'Dior口红'</span><br>depth = <span class="hljs-number">2</span><br>start_url = <span class="hljs-string">'https://s.taobao.com/search?q='</span> + goods<br>infoList = []<br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(depth):<br><span class="hljs-keyword">try</span>:<br>url = start_url + <span class="hljs-string">'&amp;s='</span> + str(<span class="hljs-number">44</span> * i)<br>html = getHTMLText(url)<br>parsePage(infoList, html)<br><span class="hljs-keyword">except</span>:<br><span class="hljs-keyword">continue</span><br>printGoodsList(infoList)<br></code></pre></td></tr></table></figure><p><strong>注意：</strong>cookie的获取方式——查询结果网页中F12，点击Network，找到Name为search?q=DiorXXXXXX请求，在Headers下可以找到cookie和user-agent，不确定是否找对了没有可以看到General的Request URL是否和你现在浏览器的地址一致，翻到最下面也可以看到你查询的关键字信息。我用的是Pycharm，写代码的时候犯了一个致命错误，就是没有把右上角的运行程序改为当前的程序，对着错误代码的错误结果，改了一晚上正确代码，我真是醉了，好像是第二次了。以后只用快捷键运行程序了，怒。运行当前程序的快捷键是<strong>Ctrl+Shift+F10</strong>。</p><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200421002929.png" alt="淘宝爬取Dior口红价格"></p>]]></content>
+    
+    <summary type="html">
+    
+      爬取淘宝商品价格和名称。
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python爬虫-Day 2 爬取2019年中国大学排行</title>
+    <link href="http://yoursite.com/2020/04/20/2020-04-20-Python%E7%88%AC%E8%99%AB-day-2-%E7%88%AC%E5%8F%962019%E5%B9%B4%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E6%8E%92%E8%A1%8C/"/>
+    <id>http://yoursite.com/2020/04/20/2020-04-20-Python%E7%88%AC%E8%99%AB-day-2-%E7%88%AC%E5%8F%962019%E5%B9%B4%E4%B8%AD%E5%9B%BD%E5%A4%A7%E5%AD%A6%E6%8E%92%E8%A1%8C/</id>
+    <published>2020-04-20T12:24:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/20 13:22</span><br><br><span class="hljs-keyword">import</span> bs4<br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHtmltext</span><span class="hljs-params">(url, agent)</span>:</span><br><span class="hljs-keyword">try</span>:<br>r = requests.get(url,timeout=<span class="hljs-number">30</span>, headers=agent)<br>r.raise_for_status()<span class="hljs-comment"># 不为200报错</span><br>r.encoding = r.apparent_encoding<br>print(r.request.url)<br>print(r.request.headers)<br><span class="hljs-keyword">return</span> r.text<br><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>print(e)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fillUnivlist</span><span class="hljs-params">(ulist, html)</span>:</span><br>soup = bs4.BeautifulSoup(html, <span class="hljs-string">'html.parser'</span>)<br><span class="hljs-keyword">for</span> tr <span class="hljs-keyword">in</span> soup.find(<span class="hljs-string">'tbody'</span>).children:<br><span class="hljs-keyword">if</span> isinstance(tr, bs4.element.Tag):  <span class="hljs-comment"># 用来判断tr标签类型是否是bs4.element.Tag</span><br>tds = tr(<span class="hljs-string">'td'</span>)<span class="hljs-comment"># 在tr里查找td，等价tr.find('td')</span><br>ulist.append([tds[<span class="hljs-number">0</span>].string, tds[<span class="hljs-number">1</span>].string, tds[<span class="hljs-number">3</span>].string,])<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printUnivlist</span><span class="hljs-params">(ulist, num)</span>:</span><br>tplt = <span class="hljs-string">"&#123;0:^10&#125;\t&#123;1:&#123;3&#125;^10&#125;\t&#123;2:^10&#125;"</span><span class="hljs-comment"># &#123;3&#125;是format的第四个参数chr(12288)，^是居中对齐，学校名称是中文，所以填充不能用默认的西文空格填充，否则对不齐</span><br>print(tplt.format(<span class="hljs-string">"排名"</span>, <span class="hljs-string">"学校名称"</span>, <span class="hljs-string">"总分"</span>, chr(<span class="hljs-number">12288</span>)))    <span class="hljs-comment"># chr(12288)是中文字符空格</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(num):<br>u = ulist[i]<br>print(tplt.format(u[<span class="hljs-number">0</span>], u[<span class="hljs-number">1</span>], u[<span class="hljs-number">2</span>], chr(<span class="hljs-number">12288</span>)))<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>agent = &#123;<span class="hljs-string">'user-agent'</span>:<span class="hljs-string">'Mozilla/5.0'</span>&#125;<br>uinfo = []<br>url = <span class="hljs-string">'http://www.zuihaodaxue.cn/zuihaodaxuepaiming2019.html'</span><br>html = getHtmltext(url, agent)<br>fillUnivlist(uinfo, html)<br>printUnivlist(uinfo, <span class="hljs-number">20</span>)<br></code></pre></td></tr></table></figure><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200420203223.png" alt="2019年中国大学排行前20结果"></p>]]></content>
+    
+    <summary type="html">
+    
+      爬取2019年中国大学前20数据。
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python爬虫-Day 1 爬取并保存某张图片</title>
+    <link href="http://yoursite.com/2020/04/20/2020-04-20-Python%E7%88%AC%E8%99%AB-day-1-%E7%88%AC%E5%8F%96%E5%B9%B6%E4%BF%9D%E5%AD%98%E6%9F%90%E5%BC%A0%E5%9B%BE%E7%89%87/"/>
+    <id>http://yoursite.com/2020/04/20/2020-04-20-Python%E7%88%AC%E8%99%AB-day-1-%E7%88%AC%E5%8F%96%E5%B9%B6%E4%BF%9D%E5%AD%98%E6%9F%90%E5%BC%A0%E5%9B%BE%E7%89%87/</id>
+    <published>2020-04-20T05:34:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/20 13:22</span><br><br><span class="hljs-keyword">import</span> requests<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHtml</span><span class="hljs-params">(url,kw,agent,path)</span>:</span><br><span class="hljs-keyword">try</span>:<br>r = requests.get(url,timeout=<span class="hljs-number">30</span>, params=kw, headers=agent)<br>r.raise_for_status()<br>r.encoding = r.raise_for_status()<br>print(r.request.url)<br>print(r.request.headers)<br><span class="hljs-keyword">with</span> open(path, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:<br>f.write(r.content)<br><span class="hljs-keyword">return</span> len(r.text)<br><span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>print(e)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>agent = &#123;<span class="hljs-string">'user-agent'</span>:<span class="hljs-string">'Mozilla/5.0'</span>&#125;  <span class="hljs-comment"># 请求头</span><br>url = <span class="hljs-string">'http://image.ngchina.com.cn/2015/0323/20150323111050534.jpg'</span><br>kw = <span class="hljs-literal">None</span>   <span class="hljs-comment">#&#123;'wd':'python'&#125;   # 百度搜索关键字</span><br>path = <span class="hljs-string">'D:/Personal/Desktop/1.jpg'</span>   <span class="hljs-comment"># 图片保存路径</span><br>print(getHtml(url, kw, agent,path))<br></code></pre></td></tr></table></figure><p><strong>功能：</strong>爬取国家地理网站的一张图片并保存，部分代码为练习，可自行删除，写入文件要跟具体的文件名（1.jpg），只添加路径，没给文件命名，会报这个错<strong>PermissionError: [Errno 13] Permission denied:XXXXXX</strong>，保存路径注意要用斜杠”/“</p>]]></content>
+    
+    <summary type="html">
+    
+      学python不学点爬虫知识怎么行呢。
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter Notebook的安装与配置</title>
+    <link href="http://yoursite.com/2020/04/16/2020-04-16-jupyter-notebook%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/2020/04/16/2020-04-16-jupyter-notebook%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-04-16T13:35:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul><li><code>pip install jupyter</code></li></ul><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul><li><code>jupyter notebook --generate-config</code></li></ul><p>通常我们配置jupyter notebook只是更改默认启动目录，这条命令会在<strong>C:\Users\你的用户名.jupyter</strong>文件夹下生成<strong>jupyter_notebook_config.py</strong>配置文件，打开后搜索找到<br><strong>c.NotebookApp.notebook_dir = ‘在这里填上你需要的目录’</strong>，最后记得把前面的注释去掉，也就是‘#’。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pip install jupyter&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;配置&quot;&gt;&lt;a href=
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="jupyter notebook" scheme="http://yoursite.com/tags/jupyter-notebook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于QThead类中两个函数的理解</title>
+    <link href="http://yoursite.com/2020/04/14/2020-04-14-%E5%85%B3%E4%BA%8EQThead%E7%B1%BB%E4%B8%AD%E4%B8%A4%E4%B8%AA%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://yoursite.com/2020/04/14/2020-04-14-%E5%85%B3%E4%BA%8EQThead%E7%B1%BB%E4%B8%AD%E4%B8%A4%E4%B8%AA%E5%87%BD%E6%95%B0%E7%9A%84%E7%90%86%E8%A7%A3/</id>
+    <published>2020-04-14T15:04:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>pyqtSignal()：指定这是一个带什么参数的信号</li><li>emit()：发射带什么参数的信号（不仅可以激活连接的槽函数，还可以传递参数给他）</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;pyqtSignal()：指定这是一个带什么参数的信号&lt;/li&gt;
+&lt;li&gt;emit()：发射带什么参数的信号（不仅可以激活连接的槽函数，还可以传递参数给他）&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="QThead" scheme="http://yoursite.com/tags/QThead/"/>
+    
+      <category term="线程" scheme="http://yoursite.com/tags/%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于视频中用cv2.imshow循环读取图片无法显示的解决方案</title>
+    <link href="http://yoursite.com/2020/04/14/2020-04-14-%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E4%B8%AD%E7%94%A8cv2.imshow%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2020/04/14/2020-04-14-%E5%85%B3%E4%BA%8E%E8%A7%86%E9%A2%91%E4%B8%AD%E7%94%A8cv2.imshow%E5%BE%AA%E7%8E%AF%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <published>2020-04-14T11:01:08.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>需配合cv2.waitkey()使用</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;需配合cv2.waitkey()使用&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Opencv" scheme="http://yoursite.com/tags/Opencv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于JsDelivr需要注意的地方</title>
+    <link href="http://yoursite.com/2020/04/03/2020-04-03-%E5%85%B3%E4%BA%8EJsDelivr%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/"/>
+    <id>http://yoursite.com/2020/04/03/2020-04-03-%E5%85%B3%E4%BA%8EJsDelivr%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/</id>
+    <published>2020-04-03T11:38:22.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在使用主题的某个功能的时候，老是失败，调开F12发现403，跳到拒绝访问的网址报错：Package size exceeded the configured limit of 50 MB. Try <del><em><a href="https://github.com/xxxx/xxxxx/xxx.jpg" target="_blank" rel="noopener">https://github.com/xxxx/xxxxx/xxx.jpg</a></em></del> instead，虽然知道字面意思是指包超出了50M，但却不知道是哪里的包太大了，十分无奈，然后百度了一通终于发现原来是release包太大了，所以说还是要尽量减少自己每个release的大小，如果说太大了建议分成几个仓库存放。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天在使用主题的某个功能的时候，老是失败，调开F12发现403，跳到拒绝访问的网址报错：Package size exceeded the configured limit of 50 MB. Try &lt;del&gt;&lt;em&gt;&lt;a href=&quot;https://github.com
+      
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="cdn" scheme="http://yoursite.com/tags/cdn/"/>
+    
+      <category term="JsDelivr" scheme="http://yoursite.com/tags/JsDelivr/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Wordpress固定链接出现404的解决方案</title>
+    <link href="http://yoursite.com/2020/04/03/2020-04-03-%E5%85%B3%E4%BA%8Ewordpress%E5%9B%BA%E5%AE%9A%E9%93%BE%E6%8E%A5%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://yoursite.com/2020/04/03/2020-04-03-%E5%85%B3%E4%BA%8Ewordpress%E5%9B%BA%E5%AE%9A%E9%93%BE%E6%8E%A5%E5%87%BA%E7%8E%B0404%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</id>
+    <published>2020-04-02T16:34:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>   这个困惑了我好几次每次都断断续续折腾我几小时的问题终于被我解决了，首先设置固定连接之前你需要设置好伪静态，我是在宝塔面板上设置的，我反反复复一直以为是我伪静态没有设置好，每次动不动404、500的，快要吐了，回归正题，接下来讲如何解决：</p><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>   500我就不讲了，在之前的帖子有，而这个404出现的时候我每次都会观察地址栏的链接，看着这一个个中文汉字，不知道为啥，我总是心慌慌的，结果不出我所料，果然是这里出了问题，你啥时候见过地址栏路径出现汉字的，（注意，我说的是路径）而且有一次我把一个分类随意设置了个英文别名，这个分类页面却可以访问，所以我大彻大悟般地把所有的分类都添加了英文别名，结果很显然，可以正常访问！这样既保证了显示中文的需求，又解决了404的文图，岂不美哉，当然，你也可以直接把分类都弄成英文，页面也是同样的道理，哎，经常被一些小问题折腾地死去活来，浪费了我多少宝贵的时间T T</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;   这个困惑了我好几次每次都断断续续折腾我几小时的问题终于被我解决了，首先设置固定连接之前你需要设置好伪静态，我是在宝塔面板上设置的，我反
+      
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="404" scheme="http://yoursite.com/tags/404/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>因博主懒，此站停止更新（请跳转至：www.fjct.city）</title>
+    <link href="http://yoursite.com/2020/04/02/2020-04-02-%E5%9B%A0%E5%8D%9A%E4%B8%BB%E7%B2%BE%E5%8A%9B%E6%9C%89%E9%99%90%EF%BC%8C%E6%AD%A4%E7%AB%99%E5%81%9C%E6%AD%A2%E6%9B%B4%E6%96%B0%EF%BC%88%E8%AF%B7%E8%B7%B3%E8%BD%AC%E8%87%B3%EF%BC%9Awww.fjct.city%EF%BC%89/"/>
+    <id>http://yoursite.com/2020/04/02/2020-04-02-%E5%9B%A0%E5%8D%9A%E4%B8%BB%E7%B2%BE%E5%8A%9B%E6%9C%89%E9%99%90%EF%BC%8C%E6%AD%A4%E7%AB%99%E5%81%9C%E6%AD%A2%E6%9B%B4%E6%96%B0%EF%BC%88%E8%AF%B7%E8%B7%B3%E8%BD%AC%E8%87%B3%EF%BC%9Awww.fjct.city%EF%BC%89/</id>
+    <published>2020-04-02T13:34:50.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Click-here"><a href="#Click-here" class="headerlink" title="Click here!"></a><strong><a href="https://www.fjct.city/" target="_blank" rel="noopener">Click here!</a></strong></h1><h1 id="I’m-waiting-for-you…"><a href="#I’m-waiting-for-you…" class="headerlink" title="I’m waiting for you…"></a>I’m waiting for you…</h1><h3 id="2020-4-2："><a href="#2020-4-2：" class="headerlink" title="2020.4.2："></a><strong>2020.4.2：</strong></h3><p>是的，没错，我又回来不定期更新了。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Click-here&quot;&gt;&lt;a href=&quot;#Click-here&quot; class=&quot;headerlink&quot; title=&quot;Click here!&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;a href=&quot;https://www.fjct.city/&quot; target=&quot;_blank
+      
+    
+    </summary>
+    
+    
+      <category term="闲时杂谈" scheme="http://yoursite.com/categories/%E9%97%B2%E6%97%B6%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="停更" scheme="http://yoursite.com/tags/%E5%81%9C%E6%9B%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda重新安装注意事项</title>
+    <link href="http://yoursite.com/2020/03/31/2020-03-31-Anaconda%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+    <id>http://yoursite.com/2020/03/31/2020-03-31-Anaconda%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</id>
+    <published>2020-03-31T12:28:58.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里还是建议安装原来的anaconda版本，以免出现一些冲突，重新安装Anaconda需要注意是否已经把anaconda完全删除干净，注册表是否清理完全（可以借助一些软件），完成这些之后如果在安装过程中出现勾选添加环境变量红字的情况，检查C:\Users\XXX下是否有anaconda的<code>.condarc</code>配置文件，如果有，请把它删除，重新运行安装程序即可发现红字不再显示。</p>]]></content>
+    
+    <summary type="html">
+    
+      由于我之前不小心误删了anaconda的文件，导致我无法更新conda，搜索解决办法试了都没啥用，无奈之下只好重新安装Anaconda。
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Anaconda" scheme="http://yoursite.com/tags/Anaconda/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github项目-Tf-Pose-Estimation</title>
+    <link href="http://yoursite.com/2020/03/31/2020-03-31-Github%E9%A1%B9%E7%9B%AE-tf-pose-estimation/"/>
+    <id>http://yoursite.com/2020/03/31/2020-03-31-Github%E9%A1%B9%E7%9B%AE-tf-pose-estimation/</id>
+    <published>2020-03-31T10:18:20.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-搭建虚拟环境"><a href="#1-搭建虚拟环境" class="headerlink" title="1.搭建虚拟环境"></a>1.搭建虚拟环境</h3><p>（1）激活环境，先进行下列操作（为了安装requirements.txt的时候不报错）</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install Cython<br>pip install numpy<br></code></pre></td></tr></table></figure><p><strong>注意：后面如果还遇到“No module named xxx”的问题，直接pip install就行</strong></p><p>（2）<a href="https://gitee.com/daisf666/cocoapi" target="_blank" rel="noopener">点这里</a>，往下滑，找到下载Visual C++ 2015 build tools的地方，下载完成后选择默认安装，不装的话在安装pycocotools的时候会报错。</p><p>（3）cd到文件目录下安装：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> -r requirements.txt<br>pip <span class="hljs-keyword">install</span> opencv-python<br>pip <span class="hljs-keyword">install</span> tensorflow-gpu==<span class="hljs-number">1.13</span>.<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure><p>（tensorpack）TensorFlow ≥ 1.5, &lt; 2. </p><p>（tf-pose-estimation）Tensorflow 1.4.1+</p><p>所以我选择了1.13.2，刚好可以和我的cuda10配套使用。</p><p>对于requirements.txt我做了如下修改：</p><p><img src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p><h3 id="2-编译用于后期处理的C-库"><a href="#2-编译用于后期处理的C-库" class="headerlink" title="2.编译用于后期处理的C++库"></a>2.编译用于后期处理的C++库</h3><p>（1）先下载swig，然后用swig命令去编译<br><a href="http://www.swig.org/download.html" target="_blank" rel="noopener">下载地址</a>    <strong>注意：选择swigwin，因为是windows系统下安装，不要下错了。</strong><br>解压到任意目录，我这里放在C:\swigwin-4.0.1，把该目录加入环境变量path，右键“此电脑”-属性-高级系统设置-环境变量-系统变量-path，例如我是F:\swigwin-4.0.1，添加进path即可。添加完成后打开cmd，输入<code>swig --help</code>查看是否成功。<br>（2）cd tf-pose-estimation/tf_pose/pafprocess/<br>运行：swig -python -c++ pafprocess.i &amp;&amp; python3 setup.py build_ext –inplace</p><h3 id="3-模型"><a href="#3-模型" class="headerlink" title="3.模型"></a>3.模型</h3><p>该项目提供的文件有四个：</p><ul><li>cmu (trained in 656x368)</li><li>mobilenet_thin (trained in 432x368)</li><li>mobilenet_v2_large (trained in 432x368)</li><li>mobilenet_v2_small (trained in 432x368) </li></ul><p>对于git，CMU的模型太大，因此作者将其上传到外部云中，如果要使用cmu的原始模型，则要自己下载它们，作者在模型文件夹中提供了下载脚本。</p><h3 id="4-需要解决的问题"><a href="#4-需要解决的问题" class="headerlink" title="4.需要解决的问题"></a>4.需要解决的问题</h3><p><strong>（1）No module named ‘tensorflow.contrib.tensorrt’</strong></p><p>这是我的头号大敌，我快给他整崩溃了，网上到处寻找解决方案无果，改成from xxx 也是不行的，然后我在官网看到<strong>tensorrt在windows下不支持python</strong>，于是我转战我的Ubuntu一顿操作，装了CUAD，Cudnn，Anaconda，Pycharm，开始搭建环境，安装这些东西也出现了一些问题，各种解决，直到<strong>Pre-Install Jetson case</strong>这一步的时候，我始终无法定位到资源包。</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">$ sudo apt-<span class="hljs-keyword">get</span> install libllvm<span class="hljs-number">-7</span>-ocaml-dev libllvm7 llvm<span class="hljs-number">-7</span> llvm<span class="hljs-number">-7</span>-dev llvm<span class="hljs-number">-7</span>-doc llvm<span class="hljs-number">-7</span>-examples llvm<span class="hljs-number">-7</span>-runtime<br>$ export LLVM_CONFIG=/usr/bin/llvm-config<span class="hljs-number">-7</span><br></code></pre></td></tr></table></figure><p>解决无果，我又回到Win10继续思考，最后没想到只要把\tf-pose-estimation\tf_pose\estimator.py第14行</p><p><code>import tensorflow.contrib.tensorrt as trt</code></p><p>注释掉就好了，天呐，我醉了。（其实我是在气急败坏的时候把它删了的时候才发现的- -）</p><p><strong>（2）UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.</strong></p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">python run_webcam.py <span class="hljs-attribute">--model</span>=mobilenet_thin <span class="hljs-attribute">--resize</span>=432x368 <span class="hljs-attribute">--camera</span>=0<br></code></pre></td></tr></table></figure><p>这一步是通过调用摄像头，按理说应该是没什么问题的，已经初步成功了。</p><p>接着识别已经在目录下的图片，执行：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">python run.py <span class="hljs-attribute">--model</span>=mobilenet_thin <span class="hljs-attribute">--resize</span>=432x368 <span class="hljs-attribute">--image</span>=./images/p1.jpg<br></code></pre></td></tr></table></figure><p>出现报错：<strong>UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.</strong>解决方法：打开tf-pose-estimation中的run.py文件，将第56行<code>import matplotlib.pyplot as plt</code> 改为：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> matplotlib<br>matplotlib.use(<span class="hljs-string">'TkAgg'</span>)<br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br></code></pre></td></tr></table></figure><p><strong>（3）执行视频文件时几乎没有骨骼识别的痕迹。</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">python run_video.py --model=mobilenet_thin --resolution=<span class="hljs-number">432</span>x368 --video=./etcs/dance.mp4<br></code></pre></td></tr></table></figure><p>执行发现，舞者跳舞的时候，没有骨骼识别的痕迹。打开tf-pose-estimation中的run_video.py文件<br>解决办法：<br>（1）添加一段代码</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">parser.add_argument(<span class="hljs-string">'--resize-out-ratio'</span>, type=float, default=<span class="hljs-number">4.0</span>, help=<span class="hljs-string">'if provided, resize heatmaps before they are post-processed. default=1.0'</span>)<br></code></pre></td></tr></table></figure><p>（2）下方的while cap.isOpened()中humans = e.inference(image)改为：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">humans = e.inference(image, resize_to_default=(w &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">and</span> h &gt; <span class="hljs-number">0</span>), upsample_size=args.resize_out_ratio)<br></code></pre></td></tr></table></figure><h3 id="到此所有问题都解决了-真是不容易啊，欧拉欧拉欧拉欧拉欧拉"><a href="#到此所有问题都解决了-真是不容易啊，欧拉欧拉欧拉欧拉欧拉" class="headerlink" title="到此所有问题都解决了,真是不容易啊，欧拉欧拉欧拉欧拉欧拉~~~"></a><em>到此所有问题都解决了,真是不容易啊，欧拉欧拉欧拉欧拉欧拉~~~</em></h3>]]></content>
+    
+    <summary type="html">
+    
+      这两天一直在折腾tf-pose-estimation这个项目，踩了不少坑，还换着Ubuntu踩，最后总算是运行成功了，接下来就可以自己对代码去做些修改，去实现自己想要的功能了。
+    
+    </summary>
+    
+    
+      <category term="Github项目" scheme="http://yoursite.com/categories/Github%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="tf-pose" scheme="http://yoursite.com/tags/tf-pose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何设置首页阅读更多按钮</title>
+    <link href="http://yoursite.com/2020/03/29/2020-03-29-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E6%8C%89%E9%92%AE/"/>
+    <id>http://yoursite.com/2020/03/29/2020-03-29-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE%E9%A6%96%E9%A1%B5%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A%E6%8C%89%E9%92%AE/</id>
+    <published>2020-03-28T17:50:08.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>通常我们需要在主页上显示文章的某些部分，然后提供指向完整文章的链接。 NexT提供了两种方法来控制文章在首页中的显示方式，你可以使用以下方式显示文章摘要和“更多信息”按钮。</p><p>1.Hexo建议在文章中使用&lt;!– more –&gt;手动中断文章。使用&lt;!– more –&gt;，不仅可以控制要显示的内容，还可以让Hexo的插件轻松使用它。</p><p>2.如果你已在Front-matter中添加了描述并将其值设置为文章摘要，则默认情况下，NexT会将描述摘录为首页中的前导文本。 如果没有描述，则全部内容将为首页中的前导文字。你可以通过在主题配置文件中将excerpt_description的值设置为false来禁用它。</p>]]></content>
+    
+    <summary type="html">
+    
+      百度上的设置自动阅读更多方法的已失效，最后终于在官网找到了答案。
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="阅读更多" scheme="http://yoursite.com/tags/%E9%98%85%E8%AF%BB%E6%9B%B4%E5%A4%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>目前设置Next主题访问人数显示正常可行的方法</title>
+    <link href="http://yoursite.com/2020/03/28/2020-03-28-%E7%9B%AE%E5%89%8D%E8%AE%BE%E7%BD%AENext%E4%B8%BB%E9%A2%98%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0%E6%98%BE%E7%A4%BA%E6%AD%A3%E5%B8%B8%E5%8F%AF%E8%A1%8C%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/03/28/2020-03-28-%E7%9B%AE%E5%89%8D%E8%AE%BE%E7%BD%AENext%E4%B8%BB%E9%A2%98%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0%E6%98%BE%E7%A4%BA%E6%AD%A3%E5%B8%B8%E5%8F%AF%E8%A1%8C%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2020-03-27T17:44:13.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>刚开始照着几篇博文完善了一下next主题的插件功能，唯有显示阅读人数让我头疼不已，设置了半天都显示不正常，数字那块老是空着，百度了许久也未能找出成功解决的方法，而且看到许多朋友也是显示不正常，但碰巧有一次看见人家显示得好好的就纳闷了，调了下审查元素，发现用的是busuanzi，我之前设置的都是用的<a href="http://link.zhihu.com/?target=https%3A//leancloud.cn/">leancloud</a>，还得自己去注册设置api，然后就想试试也用busuanzi。<a id="more"></a></p><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>打开主题配置文件，找到busuanzi_count，enable改为true,注意那几个false，不关掉会和代码冲突</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">busuanzi_count:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">total_visitors:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">total_visitors_icon:</span> <span class="hljs-string">user</span><br>  <span class="hljs-attr">total_views:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">total_views_icon:</span> <span class="hljs-string">eye</span><br>  <span class="hljs-attr">post_views:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">post_views_icon:</span> <span class="hljs-string">eye</span><br></code></pre></td></tr></table></figure><p>打开/blog/themes/next/layout/_partials/footer.swig 在文件底部添加下面的代码:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"powered-by"</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fa fa-user-md"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"busuanzi_container_site_uv"</span>&gt;</span><br>  本站总访客数:<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"busuanzi_value_site_uv"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span>| <br><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"busuanzi_container_site_pv"</span>&gt;</span><br>    <span class="hljs-symbol">&amp;nbsp;</span>本站总访问量<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"busuanzi_value_site_pv"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>次<br><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure><ul><li><h2 id="2020-4-21更新代码"><a href="#2020-4-21更新代码" class="headerlink" title="2020.4.21更新代码"></a>2020.4.21更新代码</h2></li><li><pre><code>&lt;!-- 不蒜子统计 --&gt;&lt;span &gt;        本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次&lt;/span&gt;&lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;&lt;span &gt;         本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人&lt;/span&gt;&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></pre></li></ul><p>打开/blog/themes/next/layout/_macro/post.swig,在该添加<code>&lt;span&gt;°C&lt;/span&gt;</code>以显示℃</p><p><a href="https://www.wailian.work/image/ABC8d5" target="_blank" rel="noopener"><img src="http://s1.wailian.download/2020/03/28/Snipaste_2020-03-28_02-03-23.png" alt="Snipaste_2020-03-28_02-03-23.png"></a></p><ul><li><h2 id="2020-4-21更新"><a href="#2020-4-21更新" class="headerlink" title="2020.4.21更新"></a>2020.4.21更新</h2></li><li><p>要想在文章中正常显示阅读数还需要将上图中的代码改至如下:</p></li></ul><p><img src="https://i.loli.net/2020/04/21/CZ1FeOqPQbHpvwo.png" alt="Snipaste_2020-04-21_23-37-43.png"></p><ul><li>删除了部分代码，或者使用valine，但尽量用一个，避免冲突。</li></ul><p>然后打开，/blog/themes/next/languages/zh-CN.yml,找到views: ，后面改成热度（记得空格）</p><p>这里提醒一下，如果评论显示英文Valine，也在这个文件下改，具体找到post，添加如下代码：</p><p><a href="https://www.wailian.work/image/ABCLcp" target="_blank" rel="noopener"><img src="http://s1.wailian.download/2020/03/28/Snipaste_2020-03-28_02-08-28.png" alt="Snipaste_2020-03-28_02-08-28.png"></a></p><p>最后，记得把主题配置文件里的leancloud_visitors:改为false，否则就会显示两个热度，且一个为空。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;刚开始照着几篇博文完善了一下next主题的插件功能，唯有显示阅读人数让我头疼不已，设置了半天都显示不正常，数字那块老是空着，百度了许久也未能找出成功解决的方法，而且看到许多朋友也是显示不正常，但碰巧有一次看见人家显示得好好的就纳闷了，调了下审查元素，发现用的是busuanzi，我之前设置的都是用的&lt;a href=&quot;http://link.zhihu.com/?target=https%3A//leancloud.cn/&quot;&gt;leancloud&lt;/a&gt;，还得自己去注册设置api，然后就想试试也用busuanzi。
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="hexo,next,访问人数" scheme="http://yoursite.com/tags/hexo-next-%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Wordpress文章迁移到hexo</title>
+    <link href="http://yoursite.com/2020/03/27/2020-03-27-wordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB%E5%88%B0hexo/"/>
+    <id>http://yoursite.com/2020/03/27/2020-03-27-wordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB%E5%88%B0hexo/</id>
+    <published>2020-03-27T07:55:13.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>虽然github被墙让我一度想放弃双更的想法，但在Coding托管之后我又有了在这继续写博文的动力了，首先就是要把wordpress的文章移植过来，下面主要讲下具体过程。<a id="more"></a></p><h3 id="1-wordpress导出文章"><a href="#1-wordpress导出文章" class="headerlink" title="1.wordpress导出文章"></a>1.wordpress导出文章</h3><p>进入woedpress后台，选择工具下的导出菜单，下载导出的文件。</p><p><img src="http://s1.wailian.download/2020/03/27/wordprss.png" alt="wordprss.png"></p><h3 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2.安装插件"></a>2.安装插件</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql">npm <span class="hljs-keyword">install</span> hexo-migrator-wordpress <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure><h3 id="3-转换"><a href="#3-转换" class="headerlink" title="3.转换"></a>3.转换</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">hexo migrate wordpress <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><br></code></pre></td></tr></table></figure><p><code>source</code> 可以是 WordPress 导出的文件路径或网址。</p><p>这里需要注意的是，复制文件路径时要把”\“改为“/”，否则会识别不了路径，从而找不到文件。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;虽然github被墙让我一度想放弃双更的想法，但在Coding托管之后我又有了在这继续写博文的动力了，首先就是要把wordpress的文章移植过来，下面主要讲下具体过程。
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="wordpress转hexo" scheme="http://yoursite.com/tags/wordpress%E8%BD%AChexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github项目-OpenMMD</title>
+    <link href="http://yoursite.com/2020/03/26/2020-03-26-Github%E9%A1%B9%E7%9B%AE-OpenMMD/"/>
+    <id>http://yoursite.com/2020/03/26/2020-03-26-Github%E9%A1%B9%E7%9B%AE-OpenMMD/</id>
+    <published>2020-03-26T13:57:21.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间一直在研究<a href="https://github.com/CMU-Perceptual-Computing-Lab/openpose" target="_blank" rel="noopener">Openpose</a>，一直在想是不是有办法能够把视频当中人的动作提取出来从而建立到虚拟环境中，刚好在机缘巧合之下，在Github发现了<a href="https://github.com/peterljq/OpenMMD" target="_blank" rel="noopener">OpenMMD</a>这个项目,于是动手实操了一下。<a id="more"></a></p><h2 id="所需环境"><a href="#所需环境" class="headerlink" title="所需环境"></a>所需环境</h2><p>首先去项目下找到需要下载模型文件（4~5G）</p><p>1、Python</p><p>2、Tensorflow（1.13.1）ps：为加快速度可选gpu版本，不过要注意和cuda、cudnn、NVIDIA显卡型号和驱动版本的一一对应关系，2.0会报错：AttributeError：module tensorflow no attribute app</p><p>3、h5py</p><p>4、matplotlib（3.0.0）</p><p>5、pyqt5</p><p>6、opencv-python</p><p>以上建议在虚拟环境下操作~</p><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>首先，解决源码自身问题：</p><p>1、把VMD-3d-pose-baseline-mult/born/あにまさ式ミクボーン.csv这个文件修改成一个英文名字，比如miku_bone.csv，之后还需要同步修改下3DToVmd.bat文件的第18行，也是把</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-builtin-name">set</span> <span class="hljs-attribute">MODEL_BONE_CSV</span>=born\あにまさ式ミクボーン.csv<br></code></pre></td></tr></table></figure><p>里面的日文改成你刚才起的名字（miku_bone.csv）。（解决encoding找不到乱码csv文件的问题）</p><p>2、删掉3DToVmd.bat文件最后一行里的’-s %SMOOTH_TIMES%’ 。</p><p>（解决unrecognized arguments: -s 1问题）</p><p>开始操作：</p><p>1、激活虚拟环境</p><p>2、CMD cd 到 OpenposeVideo.bat 文件目录下，运行（可拖拽），看到“input path：”时，把源视频文件拖进去，输入最大人数，一路回车，这时会启动openpose程序一帧一帧的分析视频，从而生成xxx.avi视频和_json文件夹。</p><p>3、运行VMD-3d-pose-baseline-multi文件下的OpenposeTo3D.bat，拖入_json文件夹，一路回车，此时会生成形如_json_3d_20200326_015958_idx01的文件夹.</p><p>4、运行FCRN-DepthPrediction-vmd目录下的VideoToDepth.bat，拖入原视频，拖入_json_3d_20200326_015958_idx01，回车。</p><p>5、运行VMD-3d-pose-baseline-mult目录下的3DToVMD.bat，拖入_json_3d_20200326_015958_idx01文件夹，回车，完成后会在_json_3d_20200326_015958_idx01文件夹中成功生成vmd文件。</p><p>6、打开mmd，拖入pmd/pmx人物模型文件，接着拖入vmd即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间一直在研究&lt;a href=&quot;https://github.com/CMU-Perceptual-Computing-Lab/openpose&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Openpose&lt;/a&gt;，一直在想是不是有办法能够把视频当中人的动作提取出来从而建立到虚拟环境中，刚好在机缘巧合之下，在Github发现了&lt;a href=&quot;https://github.com/peterljq/OpenMMD&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;OpenMMD&lt;/a&gt;这个项目,于是动手实操了一下。
+    
+    </summary>
+    
+    
+      <category term="Github项目" scheme="http://yoursite.com/categories/Github%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="openpose，openmmd" scheme="http://yoursite.com/tags/openpose%EF%BC%8Copenmmd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决超链接设置原窗口打开仍在新标签页中打开的问题</title>
+    <link href="http://yoursite.com/2020/03/26/2020-03-26-%E8%A7%A3%E5%86%B3wordpress%E8%B6%85%E9%93%BE%E6%8E%A5%E8%AE%BE%E7%BD%AE%E5%8E%9F%E7%AA%97%E5%8F%A3%E6%89%93%E5%BC%80%E4%BB%8D%E5%9C%A8%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%AD%E6%89%93%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/03/26/2020-03-26-%E8%A7%A3%E5%86%B3wordpress%E8%B6%85%E9%93%BE%E6%8E%A5%E8%AE%BE%E7%BD%AE%E5%8E%9F%E7%AA%97%E5%8F%A3%E6%89%93%E5%BC%80%E4%BB%8D%E5%9C%A8%E6%96%B0%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%AD%E6%89%93%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2020-03-26T08:36:49.000Z</published>
+    <updated>2020-05-14T15:04:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>打开文本，将https改为http即可</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;打开文本，将https改为http即可&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="网站相关" scheme="http://yoursite.com/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
+    
+    
+      <category term="超链接" scheme="http://yoursite.com/tags/%E8%B6%85%E9%93%BE%E6%8E%A5/"/>
+    
+  </entry>
+  
+</feed>
