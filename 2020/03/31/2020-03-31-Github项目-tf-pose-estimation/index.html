@@ -300,7 +300,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install Cython<br>pip install numpy<br></code></pre></td></tr></table></figure>
 
 <p><strong>注意：后面如果还遇到“No module named xxx”的问题，直接pip install就行</strong></p>
-<p>（2）<a href="https://gitee.com/daisf666/cocoapi" target="_blank" rel="noopener">点这里</a>，往下滑，找到下载Visual C++ 2015 build tools的地方，下载完成后选择默认安装，不装的话在安装pycocotools的时候会报错。</p>
+<p>（2）<span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20vZGFpc2Y2NjYvY29jb2FwaQ==" title="https://gitee.com/daisf666/cocoapi">点这里<i class="fa fa-external-link"></i></span>，往下滑，找到下载Visual C++ 2015 build tools的地方，下载完成后选择默认安装，不装的话在安装pycocotools的时候会报错。</p>
 <p>（3）cd到文件目录下安装：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> -r requirements.txt<br>pip <span class="hljs-keyword">install</span> opencv-python<br>pip <span class="hljs-keyword">install</span> tensorflow-gpu==<span class="hljs-number">1.13</span>.<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 
@@ -308,8 +308,8 @@
 <p>（tf-pose-estimation）Tensorflow 1.4.1+</p>
 <p>所以我选择了1.13.2，刚好可以和我的cuda10配套使用。</p>
 <p>对于requirements.txt我做了如下修改：</p>
-<p><img data-src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p>
-<h3 id="2-编译用于后期处理的C-库"><a href="#2-编译用于后期处理的C-库" class="headerlink" title="2.编译用于后期处理的C++库"></a>2.编译用于后期处理的C++库</h3><p>（1）先下载swig，然后用swig命令去编译<br><a href="http://www.swig.org/download.html" target="_blank" rel="noopener">下载地址</a>    <strong>注意：选择swigwin，因为是windows系统下安装，不要下错了。</strong><br>解压到任意目录，我这里放在C:\swigwin-4.0.1，把该目录加入环境变量path，右键“此电脑”-属性-高级系统设置-环境变量-系统变量-path，例如我是F:\swigwin-4.0.1，添加进path即可。添加完成后打开cmd，输入<code>swig --help</code>查看是否成功。<br>（2）cd tf-pose-estimation/tf_pose/pafprocess/<br>运行：swig -python -c++ pafprocess.i &amp;&amp; python3 setup.py build_ext –inplace</p>
+<p><img src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p>
+<h3 id="2-编译用于后期处理的C-库"><a href="#2-编译用于后期处理的C-库" class="headerlink" title="2.编译用于后期处理的C++库"></a>2.编译用于后期处理的C++库</h3><p>（1）先下载swig，然后用swig命令去编译<br><span class="exturl" data-url="aHR0cDovL3d3dy5zd2lnLm9yZy9kb3dubG9hZC5odG1s" title="http://www.swig.org/download.html">下载地址<i class="fa fa-external-link"></i></span>    <strong>注意：选择swigwin，因为是windows系统下安装，不要下错了。</strong><br>解压到任意目录，我这里放在C:\swigwin-4.0.1，把该目录加入环境变量path，右键“此电脑”-属性-高级系统设置-环境变量-系统变量-path，例如我是F:\swigwin-4.0.1，添加进path即可。添加完成后打开cmd，输入<code>swig --help</code>查看是否成功。<br>（2）cd tf-pose-estimation/tf_pose/pafprocess/<br>运行：swig -python -c++ pafprocess.i &amp;&amp; python3 setup.py build_ext –inplace</p>
 <h3 id="3-模型"><a href="#3-模型" class="headerlink" title="3.模型"></a>3.模型</h3><p>该项目提供的文件有四个：</p>
 <ul>
 <li>cmu (trained in 656x368)</li>
