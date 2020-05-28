@@ -5,7 +5,7 @@
     <url>/2020/05/15/2020-05-15-%E4%B8%80%E4%B8%8D%E5%B0%8F%E5%BF%83%E5%88%A0%E4%BA%86Coding%E4%BB%93%E5%BA%93%E7%9A%84%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<h3 id="挽救方法"><a href="#挽救方法" class="headerlink" title="挽救方法"></a>挽救方法</h3><p>百度了试了都会在某个地方报错，于是自己瞎点，终于找回了文章和图。。。大起大落的，惊得我一身冷汗。</p>
 <p>最后到网页端这点点那点点终于看见了希望：</p>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200515003637461.png" alt="image-20200515003637461"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200515003637461.png" alt="image-20200515003637461"></p>
 <p>不过下载的时候最后不要嵌套文件夹下载，会出现解压失败的问题，最好从里到外一个文件夹一个文件夹下载，我把文章和图下回来了就好了。</p>
 ]]></content>
       <categories>
@@ -45,7 +45,7 @@
     <content><![CDATA[<hr>
 <h3 id="最近更新"><a href="#最近更新" class="headerlink" title="最近更新"></a>最近更新</h3><p><strong>详情请至：<a href="https://www.52pojie.cn/thread-1176733-1-1.html" target="_blank" rel="noopener">吾爱破解</a></strong></p>
 <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><strong>采用多进程+多协程的方式实现小说的在线搜索、下载及合并，下载的内容在软件当前运行目录下，包括合并的txt和另外一个保存分章节的文件夹。</strong></p>
-<p><img data-src="https://i.loli.net/2020/05/19/v8Tej3QlDdfx1CE.gif" alt="小说下载器演示"></p>
+<p><img src="https://i.loli.net/2020/05/19/v8Tej3QlDdfx1CE.gif" alt="小说下载器演示"></p>
 <h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ol>
 <li><strong>以<code>章节名</code>命名下载的每一章txt，以<code>小说源+小说名</code>命名文件夹及合并的txt。</strong></li>
 <li><strong>支持检索已存在章节，再次下载将继续未完成的章节。</strong></li>
@@ -62,7 +62,7 @@
 <p><strong>总结：网络稳 + 小说源稳 = 一步到位</strong></p>
 <h3 id="问题反馈"><a href="#问题反馈" class="headerlink" title="问题反馈"></a>问题反馈</h3><p><strong>单枪匹马，精力有限，何况不是程序员，都是在网上这学学那学学的，出现问题在所难免，有些网站客观因素导致的问题还望谅解！</strong></p>
 <p><strong>发现有关于章节或者内容上的问题时，请先双击源复制网址到浏览器查看是否是书源本身就存在的问题，比如章节的遗漏，内容的错误等等。</strong></p>
-<p><img data-src="https://i.loli.net/2020/05/19/vVjwnseKr3MPhEZ.png" alt="举例"></p>
+<p><img src="https://i.loli.net/2020/05/19/vVjwnseKr3MPhEZ.png" alt="举例"></p>
 <h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p><strong>单枪匹马，精力有限，何况不是程序员，都是在网上这学学那学学的，出现问题在所难免，有些网站客观因素导致的问题还望谅解！</strong></p>
 ]]></content>
       <categories>
@@ -81,7 +81,7 @@
 <li><a href="https://news.sina.cn/zt_d/yiqing0121?wm=6122_1221" target="_blank" rel="noopener">新浪</a>，对应json格式疫情数据：<code>https://gwpre.sina.cn/interface/fymap2020_data.json?_=1588258367647&amp;callback=dataAPIData</code></li>
 </ol>
 <p>这里以新浪为例子，讲一下数据是在哪找出的。</p>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-05-01_16-07-40.png" alt="Snipaste_2020-05-01_16-07-40"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-05-01_16-07-40.png" alt="Snipaste_2020-05-01_16-07-40"></p>
 <h3 id="1、爬取并存到excel"><a href="#1、爬取并存到excel" class="headerlink" title="1、爬取并存到excel"></a>1、爬取并存到excel</h3><ul>
 <li><strong>爬取全国疫情数据代码</strong></li>
 </ul>
@@ -90,7 +90,7 @@
 <ul>
 <li><strong>结果</strong></li>
 </ul>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-05-01_15-21-21.png" alt="Snipaste_2020-05-01_15-21-21"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-05-01_15-21-21.png" alt="Snipaste_2020-05-01_15-21-21"></p>
 <ul>
 <li><strong>爬取福建省各市疫情数据</strong></li>
 </ul>
@@ -99,7 +99,7 @@
 <ul>
 <li><strong>结果</strong></li>
 </ul>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-05-01_15-23-20.png" alt="Snipaste_2020-05-01_15-23-20"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-05-01_15-23-20.png" alt="Snipaste_2020-05-01_15-23-20"></p>
 <p>有兴趣的还可以自行绘制类似网页上的疫情地图哦~</p>
 <h3 id="2、部署到运行在服务器上的机器人"><a href="#2、部署到运行在服务器上的机器人" class="headerlink" title="2、部署到运行在服务器上的机器人"></a>2、部署到运行在服务器上的机器人</h3><ul>
 <li><strong>代码</strong>（注：作为插件配合其他相关依赖使用，详情见：<a href="https://www.52pojie.cn/forum.php?mod=viewthread&tid=1171812&page=1#pid31746882" target="_blank" rel="noopener">52pojie</a>）</li>
@@ -110,7 +110,7 @@
 <ul>
 <li><strong>演示</strong></li>
 </ul>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/yiqing.gif" alt="yiqing"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/yiqing.gif" alt="yiqing"></p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -125,7 +125,7 @@
     <content><![CDATA[<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/30 16:00</span><br><br><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> requests<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHTMLText</span><span class="hljs-params">(url)</span>:</span><br>	<span class="hljs-keyword">try</span>:<br>		headers = &#123;<br>			<span class="hljs-string">"user-agent"</span>: <span class="hljs-string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) "</span><br>						  <span class="hljs-string">"Chrome/80.0.3987.163 Safari/537.36"</span>&#125;<br>		r = requests.get(url, timeout=<span class="hljs-number">30</span>, headers=headers)<br>		r.raise_for_status()<br>		r.encoding = r.apparent_encoding<br>		<span class="hljs-keyword">return</span> r.text<br>	<span class="hljs-keyword">except</span>:<br>		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getYuepiaoList</span><span class="hljs-params">(lst, YuepiaoURL)</span>:</span><br>	html = getHTMLText(YuepiaoURL)<br>	hjson = json.loads(html)<br>	a = hjson[<span class="hljs-string">'data'</span>][<span class="hljs-string">'records'</span>]<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> a:<br>		<span class="hljs-keyword">try</span>:<br>			bid = i[<span class="hljs-string">'bid'</span>]<br>			bName = i[<span class="hljs-string">'bName'</span>]<br>			bAuth = i[<span class="hljs-string">'bAuth'</span>]<br>			desc = i[<span class="hljs-string">'desc'</span>]<br>			cat = i[<span class="hljs-string">'cat'</span>]<br>			catId = i[<span class="hljs-string">'catId'</span>]<br>			cnt = i[<span class="hljs-string">'cnt'</span>]<br>			rankCnt = i[<span class="hljs-string">'rankCnt'</span>]<br>			rankNum = i[<span class="hljs-string">'rankNum'</span>]<br>			single_data = [rankNum, bName, bAuth, desc, rankCnt]<br>			lst.append(single_data)<br>		<span class="hljs-keyword">except</span>:<br>			<span class="hljs-keyword">continue</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">writeResult</span><span class="hljs-params">(pagenum, lst, fpath)</span>:</span><br>	<span class="hljs-keyword">with</span> open(fpath, <span class="hljs-string">'a+'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> f:<br>		<span class="hljs-keyword">if</span> pagenum == <span class="hljs-number">1</span>:<br>			f.write(<span class="hljs-string">'月票排名\t书名\t作者\t简介\t月票数\n'</span>)<br>		<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(lst)):<br>			<span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> range(len(lst[i])):<br>				f.write(str(lst[i][j]))<br>				f.write(<span class="hljs-string">'\t'</span>)<br>			f.write(<span class="hljs-string">'\n'</span>)<br>		lst.clear()<br>	f.close()<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>	pagenum = <span class="hljs-number">1</span><br>	output_file = <span class="hljs-string">'D:/Personal/Desktop/story.xls'</span><br>	final_data = []<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):<br>		url = <span class="hljs-string">"https://m.qidian.com/majax/rank/yuepiaolist?_csrfToken=gA9RhhkaJwVdxBVFV1e0aX7bfkq2jMHnlnNUEDOl&amp;gender=male&amp;pageNum="</span> + str(<br>			pagenum) + <span class="hljs-string">"&amp;catId=-1&amp;yearmonth=202004"</span><br>		getYuepiaoList(final_data, url)<br>		writeResult(pagenum, final_data, output_file)<br>		pagenum += <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>程序比较简单，难点就是要找到<code>[&#39;data&#39;][&#39;records&#39;]</code>,首先我们要打开<a href="https://m.qidian.com/rank/yuepiao/male?gender=male&catId=-1&yearmonth=202004" target="_blank" rel="noopener">原创风云榜-起点中文网</a>，因为静态页面只显示了排名在前20的小说，找不到之后的排名，此时我们F12打开network，点击XHR，往下滚动页面就会发现多出了<code>yuepiaolist?_···</code>，查看preview发现数据都在这呢，为了查看方便，你也可以open in new tab，然后全选复制代码到<a href="http://json.cn/" target="_blank" rel="noopener">json在线解析</a>,这样会比较直观清楚一些。</p>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-04-30_17-47-55.png" alt="Snipaste_2020-04-30_17-47-55"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-04-30_17-47-55.png" alt="Snipaste_2020-04-30_17-47-55"></p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -151,7 +151,7 @@
 <h3 id="二、禁止右键菜单、选中以及拖动功能"><a href="#二、禁止右键菜单、选中以及拖动功能" class="headerlink" title="二、禁止右键菜单、选中以及拖动功能"></a>二、禁止右键菜单、选中以及拖动功能</h3><p>在<code>../hexo/themes/next/layout/_layout.swig</code>末尾添加：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"> <span class="hljs-comment">&lt;!-- 禁止右键菜单，拖动，选中 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">oncontextmenu</span>=<span class="hljs-string">'return false'</span> <span class="hljs-attr">ondragstart</span>=<span class="hljs-string">'return false'</span> <span class="hljs-attr">onselectstart</span> =<span class="hljs-string">'return false'</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>具体位置同上，这里给出图片让大家更清楚一些：<img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200424161845270.png" alt=""></p>
+<p>具体位置同上，这里给出图片让大家更清楚一些：<img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200424161845270.png" alt=""></p>
 <p>还可自行百度<code>html禁用复制代码</code>根据需要自行添加。</p>
 <h3 id="三、未成功"><a href="#三、未成功" class="headerlink" title="三、未成功"></a>三、未成功</h3><ol start="2">
 <li>更改鼠标样式。</li>
@@ -174,7 +174,7 @@
     <url>/2020/04/23/2020-04-23-Hexo+DaoVoice%E5%AE%9E%E7%8E%B0%E7%BD%91%E9%A1%B5%E5%9C%A8%E7%BA%BF%E9%80%9A%E8%AE%AF%E5%8A%9F%E8%83%BD/</url>
     <content><![CDATA[<h3 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h3><p><a href="http://dashboard.daovoice.io/app/339ec5d6" target="_blank" rel="noopener">DaoVoice官网</a></p>
 <ol>
-<li><p>先注册，注册之后，在左侧菜单栏点击<strong>应用设置</strong>，在这里你可以定制你的聊天框，然后点击<strong>安装到网站</strong>，往下翻，找到你的<strong>app_id</strong>。<img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423181651158.png" alt=""></p>
+<li><p>先注册，注册之后，在左侧菜单栏点击<strong>应用设置</strong>，在这里你可以定制你的聊天框，然后点击<strong>安装到网站</strong>，往下翻，找到你的<strong>app_id</strong>。<img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423181651158.png" alt=""></p>
 </li>
 <li><p>在next主题的配置文件中（\themes\next_config.yml），新增如下内容：</p>
 </li>
@@ -201,7 +201,7 @@
     <title>PicGo+Gitee</title>
     <url>/2020/04/23/2020-04-23-PicGo+Gitee/</url>
     <content><![CDATA[<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>Gitee也有许多自身的缺点，比如容量的限制和禁止大量外链的声明。。。万一哪天被删库了就gg了。</p>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423002641422.png" alt=""></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423002641422.png" alt=""></p>
 <h3 id="1-安装插件"><a href="#1-安装插件" class="headerlink" title="1. 安装插件"></a>1. 安装插件</h3><p>怎么安装插件我上一篇文章说了，这里要注意的是要安装<strong>gitee-uploader 1.1.2</strong>这个版本,不要安装左边那个带beta的,如果是离线安装,则要选择对应的<strong>picgo-plugin-gitee-uploader</strong> clone,因为我测试<strong>picgo-plugin-gitee</strong>不成功。</p>
 <h3 id="2-建立gitee（码云）图床库"><a href="#2-建立gitee（码云）图床库" class="headerlink" title="2. 建立gitee（码云）图床库"></a>2. 建立gitee（码云）图床库</h3><p>注册码云的方法很简单，不多说了，我们直接建立自己的图床库。<br>点击右上角的+号，新建仓库<br>新建仓库的要点如下：</p>
 <ol>
@@ -209,7 +209,7 @@
 <li><h5 id="其次将仓库设为公开"><a href="#其次将仓库设为公开" class="headerlink" title="其次将仓库设为公开"></a>其次将仓库设为公开</h5></li>
 <li><h5 id="勾选使用Readme文件初始化这个仓库"><a href="#勾选使用Readme文件初始化这个仓库" class="headerlink" title="勾选使用Readme文件初始化这个仓库"></a>勾选使用Readme文件初始化这个仓库</h5></li>
 </ol>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423004646627.png" alt=""></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423004646627.png" alt=""></p>
 <p>点击创建进入下一步（我这里已经创建了blogimage,所以前面加了个d以作示范,下面仍是blogimage）。</p>
 <h3 id="3-获取token"><a href="#3-获取token" class="headerlink" title="3. 获取token:"></a>3. 获取token:</h3><ol>
 <li>点击头像，进入设置</li>
@@ -219,7 +219,7 @@
 </ol>
 <h3 id="4-配置PicGo"><a href="#4-配置PicGo" class="headerlink" title="4. 配置PicGo"></a>4. 配置PicGo</h3><p>   安装了<strong>gitee-uploader 1.1.2</strong>插件之后，我们开始配置插件</p>
 <p>   配置插件的要点如下：</p>
-<p> <img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423005344922.png" alt=""></p>
+<p> <img src="https://gitee.com/daisf666/blogimage/raw/master/img/image-20200423005344922.png" alt=""></p>
 <ul>
 <li><p>repo：用户名/仓库名称，比如我自己的仓库daisf666/blogImage</p>
 </li>
@@ -259,11 +259,11 @@
 <p>到此就安装完成了，是不是很简单，重启PicGo之后就可以看到插件。</p>
 <p>（后来发现可以直接把在线安装出现在桌面的包放到该目录下，重启也有效）</p>
 <p>其他安装方式：</p>
-<p><img data-src="https://i.loli.net/2020/04/22/sgRIzSdb7JNjeZy.png" alt=""></p>
+<p><img src="https://i.loli.net/2020/04/22/sgRIzSdb7JNjeZy.png" alt=""></p>
 <h3 id="二、开启Typora自动上传功能"><a href="#二、开启Typora自动上传功能" class="headerlink" title="二、开启Typora自动上传功能"></a>二、开启Typora自动上传功能</h3><p>怎么让图片上传更加便捷呢？现在让我们打开Typora的偏好设置，进行如下操作：</p>
-<p><img data-src="https://i.loli.net/2020/04/22/mDHuoLQx3hf9Ili.png" alt=""></p>
+<p><img src="https://i.loli.net/2020/04/22/mDHuoLQx3hf9Ili.png" alt=""></p>
 <p>为了更直观地体现此功能，下面给出一张gif：</p>
-<p><img data-src="https://gitee.com/daisf666/blogimage/raw/master/img/typora-upload-image-gif-v2.gif" alt="typora-upload-image-gif-v2"></p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/typora-upload-image-gif-v2.gif" alt="typora-upload-image-gif-v2"></p>
 <p>如果你未开启自动上传图片的功能，把图片拖入 Typora 或者粘贴到 Typora，右键图片将会看到一个上传图片的选项，在将图片复制到文章中的时候也会自动显示该选项。在文章目录下会有个<strong>upload</strong>文件夹储存图片到本地。<strong>注意如果图床存在同名文件上传是会失败的。</strong></p>
 ]]></content>
       <categories>
@@ -279,7 +279,7 @@
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>选取网站进行爬取时，应尽量选择基金信息静态存在于HTML页面中而非js代码生成的网站，还要注意Robots协议的限制。当进行模拟人的信息搜集且不会对网站造成性能损坏和经济损失的时候，我们可以适当忽略robots协议。</p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/22 15:00</span><br><br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><span class="hljs-keyword">import</span> traceback<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHTMLText</span><span class="hljs-params">(url)</span>:</span><br>	<span class="hljs-keyword">try</span>:<br>		headers = &#123;<br>			<span class="hljs-string">"user-agent"</span>: <span class="hljs-string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) "</span><br>						  <span class="hljs-string">"Chrome/80.0.3987.163 Safari/537.36"</span>&#125;<br>		r = requests.get(url, timeout=<span class="hljs-number">30</span>, headers=headers)<br>		r.raise_for_status()<br>		r.encoding = r.apparent_encoding<br>		<span class="hljs-keyword">return</span> r.text<br>	<span class="hljs-keyword">except</span>:<br>		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFundList</span><span class="hljs-params">(lst, fundURL)</span>:</span><br>	html = getHTMLText(fundURL)<br>	soup = BeautifulSoup(html, <span class="hljs-string">'html.parser'</span>)<br>	a = soup.find_all(<span class="hljs-string">'tr'</span>)<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> a:<br>		<span class="hljs-keyword">try</span>:<br>			id = i.attrs[<span class="hljs-string">'id'</span>]<br>			<span class="hljs-comment"># re.findall返回的是list，这里我们要把它转换为str，这里list里面就只有一个str的元素，这么做（指[0]）是为了下面url的赋值。</span><br>			lst.append(re.findall(<span class="hljs-string">r'tr\d&#123;6&#125;'</span>, id)[<span class="hljs-number">0</span>])<br>		<span class="hljs-keyword">except</span>:<br>			<span class="hljs-keyword">continue</span><br><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getFundIofo</span><span class="hljs-params">(lst, fundURL, fpath)</span>:</span><br>	<span class="hljs-comment"># 打开一个文件只用于写入。如果该文件已存在则打开文件，并从开头开始编辑，即原有内容会被删除。如果该文件不存在，创建新文件。</span><br>	<span class="hljs-keyword">with</span> open(fpath, <span class="hljs-string">'w'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> f:<br>		f.write(<span class="hljs-string">"基金信息"</span> + <span class="hljs-string">'\n'</span>)<br>	<span class="hljs-keyword">for</span> fund <span class="hljs-keyword">in</span> lst:<br>		url = fundURL + fund[<span class="hljs-number">2</span>:] + <span class="hljs-string">'.html'</span>	  <span class="hljs-comment"># 因为lst储存的是trxxxxxx，这里我们只需要xxxxxx，故从第3位也就是0、1、2的2开始到结束。</span><br>		html = getHTMLText(url)<br>		<span class="hljs-keyword">try</span>:<br>			<span class="hljs-keyword">if</span> html == <span class="hljs-string">''</span>:<br>				<span class="hljs-keyword">continue</span><br>			infoDict = &#123;&#125;<br>			soup = BeautifulSoup(html, <span class="hljs-string">"html.parser"</span>)<br>			foundInfo = soup.find(<span class="hljs-string">'div'</span>, attrs=&#123;<span class="hljs-string">'class'</span>:<span class="hljs-string">"merchandiseDetail"</span>&#125;)<br>			name = foundInfo.find(attrs=&#123;<span class="hljs-string">'class'</span>: <span class="hljs-string">"fundDetail-tit"</span>&#125;)<br>			infoDict.update(&#123;<span class="hljs-string">'基金名称'</span>: name.text.split()[<span class="hljs-number">0</span>]&#125;)<br>			keyList = foundInfo.find_all(<span class="hljs-string">'dt'</span>)<br>			valueList = foundInfo.find_all(<span class="hljs-string">'dd'</span>)<br>			<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(keyList)):<br>				key = keyList[i].text.split(<span class="hljs-string">'净值估算每'</span>, <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>]	<span class="hljs-comment"># 去掉多于备注："净值估算每个交易日XXXX请以基金管理人披露净值为准。"</span><br>				val = valueList[<span class="hljs-number">3</span>*i].text		<span class="hljs-comment"># 这里每个dt下有3个dd，我们只需要0，3，6去一一对应key的0，1，2</span><br>				infoDict[key] = val<br>			<span class="hljs-comment"># 打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。新的内容将会被写入到已有内容之后。如果该文件不存在，创建新文件进行写入。</span><br>			<span class="hljs-keyword">with</span> open(fpath, <span class="hljs-string">'a'</span>, encoding=<span class="hljs-string">'utf-8'</span>) <span class="hljs-keyword">as</span> f:<br>				f.write(str(infoDict) + <span class="hljs-string">'\n'</span>)<br>			f.close()<br>		<span class="hljs-keyword">except</span>:<br>			traceback.print_exc()<br>			<span class="hljs-keyword">continue</span><br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>	fund_list_url = <span class="hljs-string">"https://fund.eastmoney.com/fund.html#os_0;isall_0;ft_;pt_1"</span><br>	fund_info_url = <span class="hljs-string">"https://fund.eastmoney.com/"</span><br>	output_file = <span class="hljs-string">'D:/Fundinfo.txt'</span><br>	slist = []<br>	getFundList(slist, fund_list_url)<br>	getFundIofo(slist, fund_info_url, output_file)<br></code></pre></td></tr></table></figure>
 
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img data-src="https://i.loli.net/2020/04/22/kfTvj69AYCtNQg4.png" alt=""></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://i.loli.net/2020/04/22/kfTvj69AYCtNQg4.png" alt=""></p>
 <p>感兴趣的话你也可以将其储存到excel中，会更加直观清楚。</p>
 ]]></content>
       <categories>
@@ -296,7 +296,7 @@
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding: gb2312 -*-</span><br><span class="hljs-comment"># Author : Daisf</span><br><span class="hljs-comment"># Date : 2020/4/21 21:30</span><br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">import</span> re<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getHTMLText</span><span class="hljs-params">(url)</span>:</span><br>	<span class="hljs-keyword">try</span>:<br>		headers = &#123;<br>			<span class="hljs-string">"user-agent"</span>: <span class="hljs-string">"Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"</span>,<br>			<span class="hljs-string">"cookie"</span>: <span class="hljs-string">"自己登录淘宝查询商品完成后的cookie"</span><br>		&#125;<br>		r = requests.get(url, timeout=<span class="hljs-number">30</span>, headers=headers)<br>		r.raise_for_status()<br>		r.encoding = r.apparent_encoding<br>		<span class="hljs-keyword">return</span> r.text<br>	<span class="hljs-keyword">except</span>:<br>		<span class="hljs-keyword">return</span> <span class="hljs-string">""</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">parsePage</span><span class="hljs-params">(ilt, html)</span>:</span><br>	<span class="hljs-keyword">try</span>:<br>		plt = re.findall(<span class="hljs-string">r'\"view_price\"\:\"[\d\.]*\"'</span>, html)<br>		tlt = re.findall(<span class="hljs-string">r'\"raw_title\"\:\".*?\"'</span>, html)<br>		<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(len(plt)):<br>			price = eval(plt[i].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">1</span>])<br>			title = eval(tlt[i].split(<span class="hljs-string">":"</span>)[<span class="hljs-number">1</span>])<br>			ilt.append([price, title])<br>	<span class="hljs-keyword">except</span>:<br>		print(<span class="hljs-string">""</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">printGoodsList</span><span class="hljs-params">(ilt)</span>:</span><br>	tplt = <span class="hljs-string">"&#123;0:^4&#125;\t&#123;1:&lt;8&#125;\t&#123;2:&#123;3&#125;&lt;16&#125;"</span><br>	print(tplt.format(<span class="hljs-string">"序号"</span>, <span class="hljs-string">"价格"</span>, <span class="hljs-string">"商品名称"</span>, chr(<span class="hljs-number">12288</span>)))<br>	count = <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> g <span class="hljs-keyword">in</span> ilt:<br>		count = count + <span class="hljs-number">1</span><br>		print(tplt.format(count, g[<span class="hljs-number">0</span>], g[<span class="hljs-number">1</span>], chr(<span class="hljs-number">12288</span>)))<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>	goods = <span class="hljs-string">'Dior口红'</span><br>	depth = <span class="hljs-number">2</span><br>	start_url = <span class="hljs-string">'https://s.taobao.com/search?q='</span> + goods<br>	infoList = []<br>	<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(depth):<br>		<span class="hljs-keyword">try</span>:<br>			url = start_url + <span class="hljs-string">'&amp;s='</span> + str(<span class="hljs-number">44</span> * i)<br>			html = getHTMLText(url)<br>			parsePage(infoList, html)<br>		<span class="hljs-keyword">except</span>:<br>			<span class="hljs-keyword">continue</span><br>	printGoodsList(infoList)<br></code></pre></td></tr></table></figure>
 
 <p><strong>注意：</strong>cookie的获取方式——查询结果网页中F12，点击Network，找到Name为search?q=DiorXXXXXX请求，在Headers下可以找到cookie和user-agent，不确定是否找对了没有可以看到General的Request URL是否和你现在浏览器的地址一致，翻到最下面也可以看到你查询的关键字信息。我用的是Pycharm，写代码的时候犯了一个致命错误，就是没有把右上角的运行程序改为当前的程序，对着错误代码的错误结果，改了一晚上正确代码，我真是醉了，好像是第二次了。以后只用快捷键运行程序了，怒。运行当前程序的快捷键是<strong>Ctrl+Shift+F10</strong>。</p>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img data-src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200421002929.png" alt="淘宝爬取Dior口红价格"></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200421002929.png" alt="淘宝爬取Dior口红价格"></p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -312,7 +312,7 @@
 
 
 
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img data-src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200420203223.png" alt="2019年中国大学排行前20结果"></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://cdn.jsdelivr.net/gh/daisf666/img/articleimg/20200420203223.png" alt="2019年中国大学排行前20结果"></p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -446,7 +446,7 @@
 <p>（tf-pose-estimation）Tensorflow 1.4.1+</p>
 <p>所以我选择了1.13.2，刚好可以和我的cuda10配套使用。</p>
 <p>对于requirements.txt我做了如下修改：</p>
-<p><img data-src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p>
+<p><img src="http://s1.wailian.download/2020/03/31/Snipaste_2020-03-31_18-44-02.png" alt="Snipaste_2020-03-31_18-44-02.png"></p>
 <h3 id="2-编译用于后期处理的C-库"><a href="#2-编译用于后期处理的C-库" class="headerlink" title="2.编译用于后期处理的C++库"></a>2.编译用于后期处理的C++库</h3><p>（1）先下载swig，然后用swig命令去编译<br><a href="http://www.swig.org/download.html" target="_blank" rel="noopener">下载地址</a>    <strong>注意：选择swigwin，因为是windows系统下安装，不要下错了。</strong><br>解压到任意目录，我这里放在C:\swigwin-4.0.1，把该目录加入环境变量path，右键“此电脑”-属性-高级系统设置-环境变量-系统变量-path，例如我是F:\swigwin-4.0.1，添加进path即可。添加完成后打开cmd，输入<code>swig --help</code>查看是否成功。<br>（2）cd tf-pose-estimation/tf_pose/pafprocess/<br>运行：swig -python -c++ pafprocess.i &amp;&amp; python3 setup.py build_ext –inplace</p>
 <h3 id="3-模型"><a href="#3-模型" class="headerlink" title="3.模型"></a>3.模型</h3><p>该项目提供的文件有四个：</p>
 <ul>
@@ -529,19 +529,19 @@
 &lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></pre></li>
 </ul>
 <p>打开/blog/themes/next/layout/_macro/post.swig,在该添加<code>&lt;span&gt;°C&lt;/span&gt;</code>以显示℃</p>
-<p><a href="https://www.wailian.work/image/ABC8d5" target="_blank" rel="noopener"><img data-src="http://s1.wailian.download/2020/03/28/Snipaste_2020-03-28_02-03-23.png" alt="Snipaste_2020-03-28_02-03-23.png"></a></p>
+<p><a href="https://www.wailian.work/image/ABC8d5" target="_blank" rel="noopener"><img src="http://s1.wailian.download/2020/03/28/Snipaste_2020-03-28_02-03-23.png" alt="Snipaste_2020-03-28_02-03-23.png"></a></p>
 <ul>
 <li><h2 id="2020-4-21更新"><a href="#2020-4-21更新" class="headerlink" title="2020.4.21更新"></a>2020.4.21更新</h2></li>
 <li><p>要想在文章中正常显示阅读数还需要将上图中的代码改至如下:</p>
 </li>
 </ul>
-<p><img data-src="https://i.loli.net/2020/04/21/CZ1FeOqPQbHpvwo.png" alt="Snipaste_2020-04-21_23-37-43.png"></p>
+<p><img src="https://i.loli.net/2020/04/21/CZ1FeOqPQbHpvwo.png" alt="Snipaste_2020-04-21_23-37-43.png"></p>
 <ul>
 <li>删除了部分代码，或者使用valine，但尽量用一个，避免冲突。</li>
 </ul>
 <p>然后打开，/blog/themes/next/languages/zh-CN.yml,找到views: ，后面改成热度（记得空格）</p>
 <p>这里提醒一下，如果评论显示英文Valine，也在这个文件下改，具体找到post，添加如下代码：</p>
-<p><a href="https://www.wailian.work/image/ABCLcp" target="_blank" rel="noopener"><img data-src="http://s1.wailian.download/2020/03/28/Snipaste_2020-03-28_02-08-28.png" alt="Snipaste_2020-03-28_02-08-28.png"></a></p>
+<p><a href="https://www.wailian.work/image/ABCLcp" target="_blank" rel="noopener"><img src="http://s1.wailian.download/2020/03/28/Snipaste_2020-03-28_02-08-28.png" alt="Snipaste_2020-03-28_02-08-28.png"></a></p>
 <p>最后，记得把主题配置文件里的leancloud_visitors:改为false，否则就会显示两个热度，且一个为空。</p>
 ]]></content>
       <categories>
@@ -556,7 +556,7 @@
     <url>/2020/03/27/2020-03-27-wordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB%E5%88%B0hexo/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>虽然github被墙让我一度想放弃双更的想法，但在Coding托管之后我又有了在这继续写博文的动力了，首先就是要把wordpress的文章移植过来，下面主要讲下具体过程。<a id="more"></a></p>
 <h3 id="1-wordpress导出文章"><a href="#1-wordpress导出文章" class="headerlink" title="1.wordpress导出文章"></a>1.wordpress导出文章</h3><p>进入woedpress后台，选择工具下的导出菜单，下载导出的文件。</p>
-<p><img data-src="http://s1.wailian.download/2020/03/27/wordprss.png" alt="wordprss.png"></p>
+<p><img src="http://s1.wailian.download/2020/03/27/wordprss.png" alt="wordprss.png"></p>
 <h3 id="2-安装插件"><a href="#2-安装插件" class="headerlink" title="2.安装插件"></a>2.安装插件</h3><figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql">npm <span class="hljs-keyword">install</span> hexo-migrator-wordpress <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="3-转换"><a href="#3-转换" class="headerlink" title="3.转换"></a>3.转换</h3><figure class="highlight xml"><table><tr><td class="code"><pre><code class="hljs xml">hexo migrate wordpress <span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><br></code></pre></td></tr></table></figure>
@@ -921,6 +921,31 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo+coding外加GitHub双线部署</title>
+    <url>/2020/03/22/2020-03-22-hexo+github+coding%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>也许有人会问，为啥一个博客要部署那么多，部署一个不就得了，yes，我起初就是这么想的，可是到后来我发现我部署在github的网站打不开了，应该是被墙了，所以只好也在国内代码托管平台部署一个了，我这里以coding为例，此文是建立在已经部署完GitHub的前提下，增加Coding部署的方法。<a id="more"></a></p>
+<h2 id="Coding注册"><a href="#Coding注册" class="headerlink" title="Coding注册"></a>Coding注册</h2><p>​    打开<a href="https://coding.net/" target="_blank" rel="noopener" title="官网">Coding官网</a>，注册，然后创建一个代码托管项目，填下项目名称创建即可，接着要注意的地方是在新版的coding当中,“静态page”要自己手动开启“功能开关“中的“构建与部属”（<strong>2020.4.22更新为“持续部署”</strong>），我找这个就找了半天，然后点开项目发现在网页的左下角的“项目设置”，天呐，真是太不人性化了，谁没事往那边瞅啊，太容易被浏览器的状态信息给遮挡了，点开之后照我上面说的打开“构建与部属”，之后你就会在左侧菜单栏的“构建与部属”中找到“静态网站”了，创建之前会提示你进行实名认证。新版的coding会随机给你生成一个域名，所以不要自己设置，不喜欢的话尽快申请一个自己的域名吧。</p>
+<p><img src="https://img-blog.csdnimg.cn/20200326213523893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
+<h2 id="添加公匙"><a href="#添加公匙" class="headerlink" title="添加公匙"></a>添加公匙</h2><p>进入该项目的“代码仓库“，进入“仓库设置”，点击“部署公匙”，新建之后，粘贴C:\Users\MACHENIKE\.ssh目录下“id_rsa.pub”文件里的公匙，勾选“永久有效”，这里要注意的是一定要勾选“授予推送权限”，否则属性为只读，就不能部署了，密匙和之前在GitHub上要一致，这样才能一起部署。</p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打开网站配置文件_config.yml，找到“deploy”下的“repo”，修改成：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">repo: <br>  github: git@github.com:xxx/xxx.github.io.git<br>  coding: git@e.coding.net:fjct/blog.git<br></code></pre></td></tr></table></figure>
+
+<p>其中，xxx为你的github用户名，coding的SSH在你的“项目概览”右下角，复制粘贴即可，最后保存。注意，当部署报错时，把密匙同目录下的“known_hosts”给删了，然后在部署时出现“Are you sure you want to continue connecting (yes/no/[fingerprint])?”中输入“yes”即可。<br><img src="https://img-blog.csdnimg.cn/20200326213636257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="2"></p>
+<p>然后在你的blog文件目录下，右键打开git bush here，输入：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">hexo d -g<br></code></pre></td></tr></table></figure>
+
+<p>等待部署完成即可。</p>
+<h2 id="双线解析"><a href="#双线解析" class="headerlink" title="双线解析"></a>双线解析</h2><p>这里照着我图片里的设置对域名进行解析就好了，解析好之后记得在“静态网页”设置里绑定。<br><img src="https://img-blog.csdnimg.cn/20200326213427183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="3"></p>
+<p>绑定域名很简单，我就不说了。</p>
+]]></content>
+      <categories>
+        <category>网站相关</category>
+      </categories>
+      <tags>
+        <tag>hexo,coding</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Tensorflow2与CUDA版本问题</title>
     <url>/2020/03/22/2020-03-22-Tensorflow2%E4%B8%8ECUDA%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>按照目前的官方文档，tensorflow2.0.0需要CUDA10.0,tensorflow2.1.0需要CUDA10.1</p>
@@ -930,31 +955,6 @@
       </categories>
       <tags>
         <tag>tensorflow，CUDA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo+coding外加GitHub双线部署</title>
-    <url>/2020/03/22/2020-03-22-hexo+github+coding%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>也许有人会问，为啥一个博客要部署那么多，部署一个不就得了，yes，我起初就是这么想的，可是到后来我发现我部署在github的网站打不开了，应该是被墙了，所以只好也在国内代码托管平台部署一个了，我这里以coding为例，此文是建立在已经部署完GitHub的前提下，增加Coding部署的方法。<a id="more"></a></p>
-<h2 id="Coding注册"><a href="#Coding注册" class="headerlink" title="Coding注册"></a>Coding注册</h2><p>​    打开<a href="https://coding.net/" target="_blank" rel="noopener" title="官网">Coding官网</a>，注册，然后创建一个代码托管项目，填下项目名称创建即可，接着要注意的地方是在新版的coding当中,“静态page”要自己手动开启“功能开关“中的“构建与部属”（<strong>2020.4.22更新为“持续部署”</strong>），我找这个就找了半天，然后点开项目发现在网页的左下角的“项目设置”，天呐，真是太不人性化了，谁没事往那边瞅啊，太容易被浏览器的状态信息给遮挡了，点开之后照我上面说的打开“构建与部属”，之后你就会在左侧菜单栏的“构建与部属”中找到“静态网站”了，创建之前会提示你进行实名认证。新版的coding会随机给你生成一个域名，所以不要自己设置，不喜欢的话尽快申请一个自己的域名吧。</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200326213523893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="1"></p>
-<h2 id="添加公匙"><a href="#添加公匙" class="headerlink" title="添加公匙"></a>添加公匙</h2><p>进入该项目的“代码仓库“，进入“仓库设置”，点击“部署公匙”，新建之后，粘贴C:\Users\MACHENIKE\.ssh目录下“id_rsa.pub”文件里的公匙，勾选“永久有效”，这里要注意的是一定要勾选“授予推送权限”，否则属性为只读，就不能部署了，密匙和之前在GitHub上要一致，这样才能一起部署。</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>打开网站配置文件_config.yml，找到“deploy”下的“repo”，修改成：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">repo: <br>  github: git@github.com:xxx/xxx.github.io.git<br>  coding: git@e.coding.net:fjct/blog.git<br></code></pre></td></tr></table></figure>
-
-<p>其中，xxx为你的github用户名，coding的SSH在你的“项目概览”右下角，复制粘贴即可，最后保存。注意，当部署报错时，把密匙同目录下的“known_hosts”给删了，然后在部署时出现“Are you sure you want to continue connecting (yes/no/[fingerprint])?”中输入“yes”即可。<br><img data-src="https://img-blog.csdnimg.cn/20200326213636257.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="2"></p>
-<p>然后在你的blog文件目录下，右键打开git bush here，输入：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html">hexo d -g<br></code></pre></td></tr></table></figure>
-
-<p>等待部署完成即可。</p>
-<h2 id="双线解析"><a href="#双线解析" class="headerlink" title="双线解析"></a>双线解析</h2><p>这里照着我图片里的设置对域名进行解析就好了，解析好之后记得在“静态网页”设置里绑定。<br><img data-src="https://img-blog.csdnimg.cn/20200326213427183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMTk0MzY4,size_16,color_FFFFFF,t_70#pic_center" alt="3"></p>
-<p>绑定域名很简单，我就不说了。</p>
-]]></content>
-      <categories>
-        <category>网站相关</category>
-      </categories>
-      <tags>
-        <tag>hexo,coding</tag>
       </tags>
   </entry>
   <entry>
