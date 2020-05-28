@@ -921,6 +921,18 @@
       </tags>
   </entry>
   <entry>
+    <title>Tensorflow2与CUDA版本问题</title>
+    <url>/2020/03/22/2020-03-22-Tensorflow2%E4%B8%8ECUDA%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>按照目前的官方文档，tensorflow2.0.0需要CUDA10.0,tensorflow2.1.0需要CUDA10.1</p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>tensorflow，CUDA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo+coding外加GitHub双线部署</title>
     <url>/2020/03/22/2020-03-22-hexo+github+coding%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>也许有人会问，为啥一个博客要部署那么多，部署一个不就得了，yes，我起初就是这么想的，可是到后来我发现我部署在github的网站打不开了，应该是被墙了，所以只好也在国内代码托管平台部署一个了，我这里以coding为例，此文是建立在已经部署完GitHub的前提下，增加Coding部署的方法。<a id="more"></a></p>
@@ -943,18 +955,6 @@
       </categories>
       <tags>
         <tag>hexo,coding</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tensorflow2与CUDA版本问题</title>
-    <url>/2020/03/22/2020-03-22-Tensorflow2%E4%B8%8ECUDA%E7%89%88%E6%9C%AC%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>按照目前的官方文档，tensorflow2.0.0需要CUDA10.0,tensorflow2.1.0需要CUDA10.1</p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>tensorflow，CUDA</tag>
       </tags>
   </entry>
   <entry>
