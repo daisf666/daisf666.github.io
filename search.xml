@@ -2055,36 +2055,6 @@ show_channel_url: true
       </tags>
   </entry>
   <entry>
-    <title>Tensorflow2与CUDA版本问题</title>
-    <url>/2020/03/22/2020-03-22-tensorflow2-yu-cuda-ban-ben-wen-ti/</url>
-    <content><![CDATA[<p>按照目前的官方文档，tensorflow2.0.0需要CUDA10.0,tensorflow2.1.0需要CUDA10.1</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>tensorflow，CUDA</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo+coding外加GitHub双线部署</title>
     <url>/2020/03/22/2020-03-22-hexo-github-coding-shuang-xian-bu-shu/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>也许有人会问，为啥一个博客要部署那么多，部署一个不就得了，yes，我起初就是这么想的，可是到后来我发现我部署在github的网站打不开了，应该是被墙了，所以只好也在国内代码托管平台部署一个了，我这里以coding为例，此文是建立在已经部署完GitHub的前提下，增加Coding部署的方法。<a id="more"></a></p>
@@ -2125,6 +2095,36 @@ show_channel_url: true
       </categories>
       <tags>
         <tag>hexo,coding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tensorflow2与CUDA版本问题</title>
+    <url>/2020/03/22/2020-03-22-tensorflow2-yu-cuda-ban-ben-wen-ti/</url>
+    <content><![CDATA[<p>按照目前的官方文档，tensorflow2.0.0需要CUDA10.0,tensorflow2.1.0需要CUDA10.1</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>tensorflow，CUDA</tag>
       </tags>
   </entry>
   <entry>
