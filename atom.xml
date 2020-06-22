@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fjct.city/"/>
-  <updated>2020-05-14T16:39:05.448Z</updated>
+  <updated>2020-06-22T17:20:22.158Z</updated>
   <id>https://www.fjct.city/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python爬虫-Day 8 爬取豆瓣电影TOP250保存到Excel并做部分数据分析</title>
+    <link href="https://www.fjct.city/2020/06/23/2020-06-23-python-pa-chong-day-8-pa-qu-dou-ban-dian-ying-top250-bao-cun-dao-excel-bing-zuo-bu-fen-shu-ju-fen-xi/"/>
+    <id>https://www.fjct.city/2020/06/23/2020-06-23-python-pa-chong-day-8-pa-qu-dou-ban-dian-ying-top250-bao-cun-dao-excel-bing-zuo-bu-fen-shu-ju-fen-xi/</id>
+    <published>2020-06-22T17:06:06.000Z</published>
+    <updated>2020-06-22T17:20:22.158Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://www.fjct.city/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="https://www.fjct.city/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>一不小心删了Coding仓库的文件</title>
@@ -484,27 +511,6 @@
     
     
       <category term="停更" scheme="https://www.fjct.city/tags/%E5%81%9C%E6%9B%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Anaconda重新安装注意事项</title>
-    <link href="https://www.fjct.city/2020/03/31/2020-03-31-anaconda-chong-xin-an-zhuang-zhu-yi-shi-xiang/"/>
-    <id>https://www.fjct.city/2020/03/31/2020-03-31-anaconda-chong-xin-an-zhuang-zhu-yi-shi-xiang/</id>
-    <published>2020-03-31T12:28:58.000Z</published>
-    <updated>2020-05-14T15:04:59.000Z</updated>
-    
-    <summary type="html">
-    
-      由于我之前不小心误删了anaconda的文件，导致我无法更新conda，搜索解决办法试了都没啥用，无奈之下只好重新安装Anaconda。
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="https://www.fjct.city/categories/Python/"/>
-    
-    
-      <category term="Anaconda" scheme="https://www.fjct.city/tags/Anaconda/"/>
     
   </entry>
   
