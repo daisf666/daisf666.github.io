@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="世界，你好（移植Wordpress，好吧，hexo真香）, Daisf,blog">
+    <meta name="keywords" content="Python爬虫-Day 9 利用Python查快递, Daisf,blog">
     <meta name="description" content="完美主义和强迫症的结合体，奈何水平不高,间歇性无能狂怒。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>世界，你好（移植Wordpress，好吧，hexo真香） | Daisf&#39;s blog</title>
+    <title>Python爬虫-Day 9 利用Python查快递 | Daisf&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -247,12 +247,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">世界，你好（移植Wordpress，好吧，hexo真香）</h1>
+                    <h1 class="description center-align post-title">Python爬虫-Day 9 利用Python查快递</h1>
                 </div>
             </div>
         </div>
@@ -372,8 +372,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BB%BA%E7%AB%99%E5%88%9D%E8%A1%B7%EF%BC%8C%E7%AC%AC%E4%B8%80%E7%AF%87blog/">
-                                <span class="chip bg-color">建站初衷，第一篇blog</span>
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
                             </a>
                         
                     </div>
@@ -384,8 +384,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%97%B2%E6%97%B6%E6%9D%82%E8%B0%88/" class="post-category">
-                                闲时杂谈
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -397,28 +397,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-20
+                    2020-07-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-14
+                    2020-07-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    497
+                    556
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -433,7 +433,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="建站的初衷"><a href="#建站的初衷" class="headerlink" title="建站的初衷"></a>建站的初衷</h1><p>   今天本该是愉快的一天，无奈经历了一件两件这样那样的事，估计要带着五味杂陈的心情结束这一天了。。。<a id="more"></a><br>   其实早在几个小时前，这个博客系统就已经通过emlog搭建好了，虽然一路顺顺利利，elmog后台操作起来也非常地友好简洁，但碍于它的用户实在较少，主题和插件不仅少，更新还慢，无奈之下只好再次转战wordpress，上次出现的问题以为只是单纯地备案没下来（原谅我的天真），没想到这个问题再次出现并且为难了我一晚上，没错，就是500！！！虽然中途胡乱操作断断续续解决了，但在编辑文章时仍然出现，无奈只好试试放弃一键部署，自己传最新版的wordpress试下，结果问题仍然存在。。。这应该是宝塔面板自身的问题了吧，参考： <a href="https://www.bt.cn/bbs/thread-33097-1-1.html" target="_blank" rel="noopener">https://www.bt.cn/bbs/thread-33097-1-1.html</a> ，其中配置文件并没有啥变化，不知道是不是我自己操作的问题，反正依葫芦画瓢，暂时解决了问题，不过仍然担心下一秒的啥操作又让他癫痫了。。。（战战兢兢地写下了这第一篇文章）<br>   好了，不多扯了，回归正题。其实此站建立的初衷就是为了自己在学习的过程中，能够有个载体记录下一路上碰到的大大小小的问题，人的记忆毕竟是有限的，也难免下次会再碰到同样的问题，同时也给有缘人提供个参考。而且，有个属于自己的博客不是挺好的吗？哈哈~</p>
+                <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>此网站查询需要提前知晓快递单号的公司，其实也有自动查询的，可以自己找找看。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">#-*-coding:gb2312-*-</span>
+<span class="token keyword">import</span> re
+<span class="token keyword">import</span> requests
+<span class="token keyword">from</span> urllib <span class="token keyword">import</span> parse
+<span class="token keyword">from</span> bs4 <span class="token keyword">import</span> BeautifulSoup
+
+
+<span class="token keyword">def</span> <span class="token function">kdcx</span><span class="token punctuation">(</span>shuru<span class="token punctuation">)</span><span class="token punctuation">:</span>
+   name <span class="token operator">=</span> shuru<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+   num <span class="token operator">=</span> shuru<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">' '</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+   list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+   dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"顺丰"</span><span class="token punctuation">:</span> <span class="token string">"sfexpress"</span><span class="token punctuation">,</span> <span class="token string">"申通"</span><span class="token punctuation">:</span> <span class="token string">"sto"</span><span class="token punctuation">,</span> <span class="token string">"圆通"</span><span class="token punctuation">:</span> <span class="token string">"yto"</span><span class="token punctuation">,</span> <span class="token string">"韵达"</span><span class="token punctuation">:</span> <span class="token string">"yunda"</span><span class="token punctuation">,</span> <span class="token string">"中通"</span><span class="token punctuation">:</span> <span class="token string">"zto"</span><span class="token punctuation">,</span> <span class="token string">"天天"</span><span class="token punctuation">:</span> <span class="token string">"ttkdex"</span><span class="token punctuation">,</span> <span class="token string">"汇通"</span><span class="token punctuation">:</span> <span class="token string">"htky"</span><span class="token punctuation">,</span>
+           <span class="token string">"宅急送"</span><span class="token punctuation">:</span> <span class="token string">"zjs"</span><span class="token punctuation">,</span> <span class="token string">"邮政包裹"</span><span class="token punctuation">:</span> <span class="token string">"chinapost"</span><span class="token punctuation">,</span> <span class="token string">"UPS"</span><span class="token punctuation">:</span> <span class="token string">"ups"</span><span class="token punctuation">,</span> <span class="token string">"EMS"</span><span class="token punctuation">:</span> <span class="token string">"ems"</span><span class="token punctuation">,</span> <span class="token string">"德邦"</span><span class="token punctuation">:</span> <span class="token string">"deppon"</span><span class="token punctuation">,</span> <span class="token string">"京东"</span><span class="token punctuation">:</span> <span class="token string">"jd"</span><span class="token punctuation">}</span>
+   kuaidi <span class="token operator">=</span> parse<span class="token punctuation">.</span>quote<span class="token punctuation">(</span>name<span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"gbk"</span><span class="token punctuation">)</span>
+   url <span class="token operator">=</span> <span class="token string">'http://m.46644.com/express/result.php?typetxt='</span> <span class="token operator">+</span> kuaidi <span class="token operator">+</span> <span class="token string">'&amp;type='</span> <span class="token operator">+</span> dict<span class="token punctuation">[</span><span class="token string">'汇通'</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">'&amp;number='</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+   headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token string">"Accept"</span><span class="token punctuation">:</span> <span class="token string">"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"</span><span class="token punctuation">,</span>
+      <span class="token string">"User-Agent"</span><span class="token punctuation">:</span> <span class="token string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36 Edg/81.0.416.68"</span><span class="token punctuation">,</span>
+   <span class="token punctuation">}</span>
+   <span class="token keyword">with</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">,</span> timeout<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span> <span class="token keyword">as</span> r<span class="token punctuation">:</span>
+      <span class="token keyword">if</span> r<span class="token punctuation">.</span>status_code <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">:</span>
+         r<span class="token punctuation">.</span>encoding <span class="token operator">=</span> r<span class="token punctuation">.</span>apparent_encoding
+         soup <span class="token operator">=</span> BeautifulSoup<span class="token punctuation">(</span>r<span class="token punctuation">.</span>text<span class="token punctuation">,</span> <span class="token string">'html.parser'</span><span class="token punctuation">)</span>
+         info <span class="token operator">=</span> soup<span class="token punctuation">.</span>find_all<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> attrs<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">"ritem clearfix"</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+         <span class="token keyword">for</span> i <span class="token keyword">in</span> info<span class="token punctuation">:</span>
+            when <span class="token operator">=</span> i<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> attrs<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">"itime"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+            day <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'\d{4}-{1}\d{2}-{1}\d{2}'</span><span class="token punctuation">,</span> when<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            time <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'\d{2}:{1}\d{2}:{1}\d{2}'</span><span class="token punctuation">,</span> when<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            location <span class="token operator">=</span> i<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">,</span> attrs<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'class'</span><span class="token punctuation">:</span> <span class="token string">"icontent"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>text
+            single <span class="token operator">=</span> day <span class="token operator">+</span> <span class="token string">'\t'</span> <span class="token operator">+</span> time <span class="token operator">+</span> <span class="token string">'\t'</span> <span class="token operator">+</span> location <span class="token operator">+</span> <span class="token string">'\n'</span>
+            list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>single<span class="token punctuation">)</span>
+         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token keyword">else</span><span class="token punctuation">:</span>
+         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'shibai'</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+   shuru <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入您要查询的快递公司和快递单号(请在中间添加1个空格):"</span><span class="token punctuation">)</span>
+   kdcx<span class="token punctuation">(</span>shuru<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/Snipaste_2020-07-03_23-15-33.png" alt="物流信息反馈"></p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>个人觉得机器人反馈查询链接和查询完后反馈物流信息没有什么太大的区别，毕竟是为了方便，直接反馈链接的话下次还可以直接在消息记录打开链接查询物流，就不用再发一遍命令了，毕竟点下链接也不麻烦（为懒惰找借口）。其实还可以添加计划任务，定时查询或者物流一有更新就反馈（铁定被反爬压死），不会设置机器人也可以使用邮箱定时反馈，不过切记间隔时间不要太短，人家物流也至少得几小时才会更新一下吧，弄太短也没意义。</p>
+<p><img src="https://gitee.com/daisf666/blogimage/raw/master/img/%E5%BF%AB%E9%80%92%E9%93%BE%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%8F%8D%E9%A6%88.png" alt="添加到机器人"></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -477,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.fjct.city/2020/03/20/2020-03-20-hello-world/">https://www.fjct.city/2020/03/20/2020-03-20-hello-world/</a>
+                    <a href="https://www.fjct.city/2020/07/03/2020-07-03-python-pa-chong-day-9-li-yong-python-cha-kuai-di/">https://www.fjct.city/2020/07/03/2020-07-03-python-pa-chong-day-9-li-yong-python-cha-kuai-di/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -515,8 +557,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BB%BA%E7%AB%99%E5%88%9D%E8%A1%B7%EF%BC%8C%E7%AC%AC%E4%B8%80%E7%AF%87blog/">
-                                    <span class="chip bg-color">建站初衷，第一篇blog</span>
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
                                 </a>
                             
                         </div>
@@ -947,84 +989,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/21/2020-03-21-gai-zuo-zheng-shi-liao/">
+                <a href="/2020/07/03/2020-07-03-python-pa-chong-day-9-li-yong-python-cha-kuai-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="该做正事了！">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Python爬虫-Day 9 利用Python查快递">
                         
-                        <span class="card-title">该做正事了！</span>
+                        <span class="card-title">Python爬虫-Day 9 利用Python查快递</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ​        虽然说用wordpress建个博客非常容易，但看着看着总会觉得自己的网站有点low，为何别人家的网站就如此高大上呢。。。郁闷，不过话说回来，谁叫我只是个web前端后端都是零基础的小白呢，要是随随便便所见即所得那人家还要不要
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%97%B2%E6%97%B6%E6%9D%82%E8%B0%88/" class="post-category">
-                                    闲时杂谈
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%90%90%E6%A7%BD/">
-                        <span class="chip bg-color">吐槽</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/03/20/2020-03-20-hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="世界，你好（移植Wordpress，好吧，hexo真香）">
-                        
-                        <span class="card-title">世界，你好（移植Wordpress，好吧，hexo真香）</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            建站的初衷   今天本该是愉快的一天，无奈经历了一件两件这样那样的事，估计要带着五味杂陈的心情结束这一天了。。。   其实早在几个小时前，这个博客系统就已经通过emlog搭建好了，虽然一路顺顺利利，elmog后台操作起来也非常地友好简洁，但
+                            查快递虽然简单，但使用python结合一些其他的想法来实现可以让查快递变得更加轻松。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%97%B2%E6%97%B6%E6%9D%82%E8%B0%88/" class="post-category">
-                                    闲时杂谈
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -1035,8 +1029,56 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BB%BA%E7%AB%99%E5%88%9D%E8%A1%B7%EF%BC%8C%E7%AC%AC%E4%B8%80%E7%AF%87blog/">
-                        <span class="chip bg-color">建站初衷，第一篇blog</span>
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/23/2020-06-23-python-pa-chong-day-8-pa-qu-dou-ban-dian-ying-top250-bao-cun-dao-excel-bing-zuo-bu-fen-shu-ju-fen-xi/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/daisf666/cdn@2.0.1/manifest/jpeg/e45ad32a0a486cdc8c3e91c832168e5c.jpeg" class="responsive-img" alt="Python爬虫-Day 8 爬取豆瓣电影TOP250保存到Excel并做部分数据分析">
+                        
+                        <span class="card-title">Python爬虫-Day 8 爬取豆瓣电影TOP250保存到Excel并做部分数据分析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            好久没更新了，有一部分是因为忙，有一部分是因为懒。。。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
                 </div>

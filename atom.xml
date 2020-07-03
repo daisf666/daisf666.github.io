@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fjct.city/"/>
-  <updated>2020-06-22T17:20:22.158Z</updated>
+  <updated>2020-07-03T15:35:57.249Z</updated>
   <id>https://www.fjct.city/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python爬虫-Day 9 利用Python查快递</title>
+    <link href="https://www.fjct.city/2020/07/03/2020-07-03-python-pa-chong-day-9-li-yong-python-cha-kuai-di/"/>
+    <id>https://www.fjct.city/2020/07/03/2020-07-03-python-pa-chong-day-9-li-yong-python-cha-kuai-di/</id>
+    <published>2020-07-03T15:12:33.000Z</published>
+    <updated>2020-07-03T15:35:57.249Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;代码&quot;&gt;&lt;a href=&quot;#代码&quot; class=&quot;headerlink&quot; title=&quot;代码&quot;&gt;&lt;/a&gt;代码&lt;/h3&gt;&lt;p&gt;此网站查询需要提前知晓快递单号的公司，其实也有自动查询的，可以自己找找看。&lt;/p&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://www.fjct.city/categories/Python/"/>
+    
+    
+      <category term="爬虫" scheme="https://www.fjct.city/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
   
   <entry>
     <title>Python爬虫-Day 8 爬取豆瓣电影TOP250保存到Excel并做部分数据分析</title>
@@ -484,33 +512,6 @@
     
     
       <category term="404" scheme="https://www.fjct.city/tags/404/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>因博主懒，此站停止更新（请跳转至：www.fjct.city）</title>
-    <link href="https://www.fjct.city/2020/04/02/2020-04-02-yin-bo-zhu-jing-li-you-xian-ci-zhan-ting-zhi-geng-xin-qing-tiao-zhuan-zhi-www.fjct.city/"/>
-    <id>https://www.fjct.city/2020/04/02/2020-04-02-yin-bo-zhu-jing-li-you-xian-ci-zhan-ting-zhi-geng-xin-qing-tiao-zhuan-zhi-www.fjct.city/</id>
-    <published>2020-04-02T13:34:50.000Z</published>
-    <updated>2020-05-14T15:04:59.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Click-here&quot;&gt;&lt;a href=&quot;#Click-here&quot; class=&quot;headerlink&quot; title=&quot;Click here!&quot;&gt;&lt;/a&gt;&lt;strong&gt;&lt;a href=&quot;https://www.fjct.city/&quot;&gt;Click
-        
-      
-    
-    </summary>
-    
-    
-      <category term="闲时杂谈" scheme="https://www.fjct.city/categories/%E9%97%B2%E6%97%B6%E6%9D%82%E8%B0%88/"/>
-    
-    
-      <category term="停更" scheme="https://www.fjct.city/tags/%E5%81%9C%E6%9B%B4/"/>
     
   </entry>
   
