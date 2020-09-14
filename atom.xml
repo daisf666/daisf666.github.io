@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.fjct.city/"/>
-  <updated>2020-07-03T15:35:57.249Z</updated>
+  <updated>2020-09-14T13:08:46.084Z</updated>
   <id>https://www.fjct.city/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>好好学Java从零基础到项目实战（入门基础篇）</title>
+    <link href="https://www.fjct.city/2020/09/14/2020-09-14-hao-hao-xue-java-cong-ling-ji-chu-dao-xiang-mu-shi-zhan-ru-men-ji-chu-pian/"/>
+    <id>https://www.fjct.city/2020/09/14/2020-09-14-hao-hao-xue-java-cong-ling-ji-chu-dao-xiang-mu-shi-zhan-ru-men-ji-chu-pian/</id>
+    <published>2020-09-14T13:04:35.000Z</published>
+    <updated>2020-09-14T13:08:46.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;第一章&quot;&gt;&lt;a href=&quot;#第一章&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.fjct.city/categories/Java/"/>
+    
+    
+      <category term="入门" scheme="https://www.fjct.city/tags/%E5%85%A5%E9%97%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>Python爬虫-Day 9 利用Python查快递</title>
@@ -485,33 +512,6 @@
       <category term="cdn" scheme="https://www.fjct.city/tags/cdn/"/>
     
       <category term="JsDelivr" scheme="https://www.fjct.city/tags/JsDelivr/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于Wordpress固定链接出现404的解决方案</title>
-    <link href="https://www.fjct.city/2020/04/03/2020-04-03-guan-yu-wordpress-gu-ding-lian-jie-chu-xian-404-de-jie-jue-fang-an/"/>
-    <id>https://www.fjct.city/2020/04/03/2020-04-03-guan-yu-wordpress-gu-ding-lian-jie-chu-xian-404-de-jie-jue-fang-an/</id>
-    <published>2020-04-02T16:34:50.000Z</published>
-    <updated>2020-05-14T15:04:59.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;  
-        
-      
-    
-    </summary>
-    
-    
-      <category term="网站相关" scheme="https://www.fjct.city/categories/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3/"/>
-    
-    
-      <category term="404" scheme="https://www.fjct.city/tags/404/"/>
     
   </entry>
   
